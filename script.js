@@ -161,55 +161,6 @@ function animatePhoneMockup() {
 
 animatePhoneMockup();
 
-// ============================================
-// Button Ripple Effect
-// ============================================
-function addRippleEffect() {
-    const buttons = document.querySelectorAll('.btn');
-
-    buttons.forEach(button => {
-        if (button.classList.contains('app-store-link')) return;
-        button.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-
-            ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
-            ripple.classList.add('ripple');
-
-            // Add ripple styles if not already in CSS
-            if (!document.querySelector('style[data-ripple]')) {
-                const style = document.createElement('style');
-                style.setAttribute('data-ripple', 'true');
-                style.textContent = `
-                    .btn { position: relative; overflow: hidden; }
-                    .ripple {
-                        position: absolute;
-                        border-radius: 50%;
-                        background: rgba(255, 255, 255, 0.5);
-                        transform: scale(0);
-                        animation: ripple-animation 0.6s ease-out;
-                    }
-                    @keyframes ripple-animation {
-                        to {
-                            transform: scale(4);
-                            opacity: 0;
-                        }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-
-            this.appendChild(ripple);
-        });
-    });
-}
-
-addRippleEffect();
 
 // ============================================
 // Form Handling Example (for future contact form)
@@ -283,30 +234,6 @@ function setupParallax() {
 
 setupParallax();
 
-// ============================================
-// Enhanced Link Behavior
-// ============================================
-function setupLinkBehavior() {
-    // Add external link indicator
-    const navLinks = document.querySelectorAll('a[href="https://"], a[href^="tel:"], a[href^="mailto:"]');
-    
-    navLinks.forEach(link => {
-        // App Store and Google Play links could be configured here
-        if (link.textContent.includes('App Store') || link.textContent.includes('Google Play')) {
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-        }
-        
-        // Email links
-        if (link.href.startsWith('mailto:')) {
-            link.addEventListener('click', function(e) {
-                // Browser handles mailto natively
-            });
-        }
-    });
-}
-
-setupLinkBehavior();
 
 // ============================================
 // CSS Custom Properties (Theme Support)
