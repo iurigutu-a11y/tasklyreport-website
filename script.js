@@ -178,6 +178,7 @@ function addRippleEffect() {
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = x + 'px';
             ripple.style.top = y + 'px';
+            ripple.style.pointerEvents = 'none';
             ripple.classList.add('ripple');
 
             // Add ripple styles if not already in CSS
@@ -192,6 +193,7 @@ function addRippleEffect() {
                         background: rgba(255, 255, 255, 0.5);
                         transform: scale(0);
                         animation: ripple-animation 0.6s ease-out;
+                        pointer-events: none;
                     }
                     @keyframes ripple-animation {
                         to {
@@ -204,6 +206,9 @@ function addRippleEffect() {
             }
 
             this.appendChild(ripple);
+            ripple.addEventListener('animationend', function() {
+                ripple.remove();
+            });
         });
     });
 }
