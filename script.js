@@ -168,6 +168,7 @@ function addRippleEffect() {
     const buttons = document.querySelectorAll('.btn');
 
     buttons.forEach(button => {
+        if (button.classList.contains('app-store-link')) return;
         button.addEventListener('click', function(e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();

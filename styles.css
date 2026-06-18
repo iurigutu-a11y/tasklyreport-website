@@ -1204,3 +1204,16 @@ p {
         display: none;
     }
 }
+
+/* ============================================
+   App Store Link Fix
+   ============================================ */
+.app-store-link {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 50;
+}
+
+.app-store-link * {
+  pointer-events: none !important;
+}
