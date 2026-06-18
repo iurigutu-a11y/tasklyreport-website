@@ -1,12 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Taskly Report PRO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Taskly Report PRO - Professional photo reports for field professionals. Create detailed PDF reports from photos with GPS, signatures, and voice notes.">
+    <meta name="theme-color" content="#0052CC">
+    <title>Taskly Report PRO - Professional Photo Reports</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body style="font-family: Arial; text-align:center; padding:50px;">
-<h1>Taskly Report PRO</h1>
-<p>Professional reports from photos.</p>
-<p>Official website under construction.</p>
-<p>Version 2</p>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <rect x="4" y="4" width="24" height="24" rx="4" fill="#0052CC"/>
+                        <path d="M10 14L14 18L22 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Taskly Report PRO</span>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#for-who">For Who</a></li>
+                    <li><a href="#roadmap">Coming Soon</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Taskly Report PRO</h1>
+                <p class="hero-subtitle">Professional photo reports for technicians, installers and field workers</p>
+                <p class="hero-description">Turn field photos into detailed PDF reports instantly. Capture GPS coordinates, timestamps, voice notes, signatures, and more.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary" aria-label="Download on App Store">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        App Store
+                    </a>
+                    <a href="#" class="btn btn-secondary" aria-label="Get it on Google Play">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3v18H1V3h22z"></path>
+                            <path d="M1 9h22M1 15h22"></path>
+                        </svg>
+                        Google Play
+                    </a>
+                </div>
+
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="status-bar"></div>
+                            <div class="screen-content">
+                                <div class="photo-placeholder">
+                                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                        <circle cx="12" cy="13" r="4"></circle>
+                                    </svg>
+                                    <p>Take Photos</p>
+                                </div>
+                                <div class="info-strip">
+                                    <span class="info-item">📍 GPS Active</span>
+                                    <span class="info-item">🕐 Auto-timestamped</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need to create professional field reports</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>Photo Documentation</h3>
+                    <p>Capture detailed photos of your work with easy-to-use camera interface</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <h3>PDF Reports</h3>
+                    <p>Generate professional PDF reports instantly with custom branding</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>GPS, Date & Time</h3>
+                    <p>Automatic location and timestamp evidence for every report</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 7l-7 5 7 5V7z"></path>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <h3>Voice Notes</h3>
+                    <p>Add voice recordings to document findings and observations</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1v22M17 5H9.5a4 4 0 0 0 0 8h5m0 0a4 4 0 1 1 0 8H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Client Signatures</h3>
+                    <p>Collect digital signatures directly on the report for approval</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"></line>
+                            <path d="M17 5H9.5a4 4 0 0 0 0 8h5.5"></path>
+                            <path d="M6 19h12"></path>
+                        </svg>
+                    </div>
+                    <h3>Estimates & Preventivo</h3>
+                    <p>Create and include cost estimates directly in your reports</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Who Section -->
+    <section id="for-who" class="for-who">
+        <div class="container">
+            <h2 class="section-title">Perfect For</h2>
+            <p class="section-subtitle">Trusted by professionals across many industries</p>
+            
+            <div class="professions-grid">
+                <div class="profession-card">
+                    <div class="profession-icon">🔧</div>
+                    <h3>HVAC Technicians</h3>
+                    <p>Document maintenance and repairs with visual evidence</p>
+                </div>
+
+                <div class="profession-card">
+                    <div class="profession-icon">⚡</div>
+                    <h3>Electricians</h3>
+                    <p>Create detailed electrical system reports</p>
+                </div>
+
+                <div class="profession-card">
+                    <div class="profession-icon">🚰</div>
+                    <h3>Plumbers</h3>
+                    <p>Document plumbing work and installations</p>
+                </div>
+
+                <div class="profession-card">
+                    <div class="profession-icon">🏗️</div>
+                    <h3>Installers</h3>
+                    <p>Track installation progress with timestamped photos</p>
+                </div>
+
+                <div class="profession-card">
+                    <div class="profession-icon">🔍</div>
+                    <h3>Inspectors</h3>
+                    <p>Generate professional inspection reports on the go</p>
+                </div>
+
+                <div class="profession-card">
+                    <div class="profession-icon">📊</div>
+                    <h3>Small Service Businesses</h3>
+                    <p>Streamline your field reporting workflow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <h2 class="section-title">Coming Soon</h2>
+            <p class="section-subtitle">Exciting features we're working on</p>
+            
+            <div class="roadmap-items">
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">Soon</div>
+                    <h3>AI Assistant</h3>
+                    <p>Let AI automatically generate report descriptions from your photos and voice notes</p>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">Soon</div>
+                    <h3>Web Version</h3>
+                    <p>Access your reports from any device with our full-featured web application</p>
+                </div>
+
+                <div class="roadmap-item">
+                    <div class="roadmap-badge">Soon</div>
+                    <h3>Advanced Measurements</h3>
+                    <p>Measure distances and dimensions directly in photos using AR technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Work Smarter?</h2>
+                <p>Download Taskly Report PRO today and transform how you create field reports</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">Download Now</a>
+                    <a href="#contact" class="btn btn-outline btn-lg">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="4" width="24" height="24" rx="4" fill="#0052CC"/>
+                            <path d="M10 14L14 18L22 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Taskly Report PRO</span>
+                    </div>
+                    <p>Professional photo reports for field professionals</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#for-who">For Who</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:iurigutu@gmail.com">iurigutu@gmail.com</a></li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 8px;">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            Carpenedolo, Brescia, Italy
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Taskly Report PRO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
