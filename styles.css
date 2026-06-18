@@ -264,8 +264,17 @@ p {
     flex-wrap: wrap;
     animation: fadeInUp 0.8s ease 0.3s backwards;
     margin-bottom: 2rem;
+    position: relative;
+    z-index: 100;
 }
 
+.hero-buttons a {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 101;
+}
+
+.app-store-badge,
 .google-play-badge {
     display: inline-flex;
     align-items: center;
@@ -274,6 +283,8 @@ p {
     height: 40px;
     transition: all 0.3s ease;
     animation: fadeInUp 0.8s ease 0.35s backwards;
+    pointer-events: auto !important;
+    z-index: 101;
 }
 
 .google-play-badge:hover {
@@ -281,7 +292,13 @@ p {
     opacity: 0.9;
 }
 
-.google-play-badge svg {
+.app-store-badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.google-play-badge svg,
+.app-store-badge svg {
     width: 100%;
     height: 100%;
 }
@@ -787,6 +804,14 @@ p {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+}
+
+.cta-buttons a {
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 101;
 }
 
 .cta-buttons .btn-primary {
@@ -965,6 +990,7 @@ p {
         flex-direction: column;
     }
 
+    .app-store-badge,
     .google-play-badge {
         width: 100%;
     }
@@ -1106,17 +1132,50 @@ p {
         padding: 1.25rem;
     }
 
-    .gallery,
-    .why-section,
-    .features,
-    .ai-section,
-    .for-who,
-    .roadmap {
-        padding: 2rem 0;
+    .why-card h3,
+    .feature-card h3,
+    .profession-card h3,
+    .roadmap-item h3 {
+        font-size: 1rem;
     }
 
-    .cta-section {
-        padding: 2rem 0;
+    .why-card p,
+    .feature-card p,
+    .profession-card p,
+    .roadmap-item p {
+        font-size: 0.85rem;
+    }
+
+    .ai-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .ai-subtitle {
+        font-size: 1rem;
+    }
+
+    .ai-description {
+        font-size: 0.9rem;
+    }
+
+    .profession-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .why-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-icon svg {
+        width: 24px;
+        height: 24px;
     }
 
     .cta-content h2 {
@@ -1129,91 +1188,18 @@ p {
         margin-bottom: 1.5rem;
     }
 
-    .footer {
-        padding: 2rem 0 1rem;
+    .footer-section h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
     }
 
-    .footer-content {
-        gap: 1.5rem;
+    .footer-section ul li {
+        margin-bottom: 0.4rem;
+        font-size: 0.85rem;
     }
 
-    .ai-mockup {
-        width: 180px;
-        height: 320px;
+    .footer-bottom {
+        padding-top: 1.5rem;
+        font-size: 0.8rem;
     }
-
-    .trust-badges {
-        gap: 0.5rem;
-    }
-
-    .trust-badge {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
-    }
-
-    .trust-badge svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    .gallery-grid {
-        gap: 1rem;
-    }
-
-    .why-grid {
-        gap: 1rem;
-    }
-
-    .features-grid {
-        gap: 1rem;
-    }
-
-    .ai-features {
-        gap: 0.75rem;
-    }
-
-    .professions-grid {
-        gap: 1rem;
-    }
-
-    .roadmap-items {
-        gap: 1rem;
-    }
-}
-
-/* ============================================
-   Accessibility
-   ============================================ */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ============================================
-   Print Styles
-   ============================================ */
-@media print {
-    .navbar,
-    .hero-buttons,
-    .cta-buttons,
-    .trust-badges {
-        display: none;
-    }
-}
-
-/* ============================================
-   App Store Link Fix
-   ============================================ */
-.app-store-link {
-  pointer-events: auto !important;
-  position: relative;
-  z-index: 50;
-}
-
-.app-store-link * {
-  pointer-events: none !important;
 }
