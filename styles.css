@@ -224,6 +224,7 @@ p {
     bottom: 0;
     background: linear-gradient(135deg, #0052CC 0%, #003d99 50%, #00215a 100%);
     z-index: -1;
+    pointer-events: none;
 }
 
 .hero-content {
