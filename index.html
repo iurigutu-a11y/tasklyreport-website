@@ -1,15 +1,603 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Taskly Report PRO - Professional photo reports for field professionals. Create detailed PDF reports from photos with GPS, signatures, and voice notes.">
     <meta name="theme-color" content="#0052CC">
     <title>Taskly Report PRO - Professional Photo Reports</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #f8fafc;
+            color: #0b1b33;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e9edf2;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #0b1b33;
+        }
+
+        .logo svg {
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 500;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0052CC;
+        }
+
+        .nav-cta {
+            background: #0052CC;
+            color: #fff !important;
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #003d99 !important;
+            color: #fff !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: #0b1b33;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero-clean {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .hero-clean-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 20, 40, 0.12);
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        /* ===== DOWNLOAD BUTTONS ===== */
+        .hero-downloads {
+            padding: 16px 0 40px;
+            text-align: center;
+        }
+
+        .hero-downloads .container {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-store {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 17px;
+            text-decoration: none;
+            transition: 0.25s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-store:first-child {
+            background: #000;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .btn-store:first-child:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .btn-store:last-child {
+            background: #ffffff;
+            color: #0b1b33;
+            border: 2px solid #e9edf2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .btn-store:last-child:hover {
+            transform: translateY(-3px);
+            border-color: #0052CC;
+            box-shadow: 0 8px 24px rgba(0, 82, 204, 0.12);
+        }
+
+        .btn-store svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ===== CARDS SECTION ===== */
+        .landing-cards-section {
+            padding: 20px 0 50px;
+        }
+
+        .landing-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .landing-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 26px;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            transition: 0.25s;
+        }
+
+        .landing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 20, 40, 0.08);
+        }
+
+        .landing-card h2 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .landing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 16px;
+        }
+
+        .landing-card ul li {
+            padding: 5px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 15px;
+            color: #1e293b;
+        }
+
+        .landing-card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0052CC;
+            font-weight: 700;
+        }
+
+        .mini-icons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .mini-icons span {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+        }
+
+        .mini-icons span br {
+            display: block;
+        }
+
+        .profession-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+        }
+
+        .profession-icons div {
+            background: #f8fafc;
+            padding: 10px 4px;
+            border-radius: 16px;
+            font-size: 13px;
+        }
+
+        .profession-icons div br {
+            display: block;
+        }
+
+        .workflow-line {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .workflow-line div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background: #f8fafc;
+            padding: 8px 20px;
+            border-radius: 40px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .workflow-line strong {
+            color: #0052CC;
+            font-size: 20px;
+        }
+
+        /* ===== WHY SECTION ===== */
+        .why-new-section {
+            padding: 50px 0;
+            background: #ffffff;
+        }
+
+        .why-new-section h2 {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 32px;
+        }
+
+        .why-new-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-new-grid div {
+            background: #f8fafc;
+            padding: 24px 16px;
+            border-radius: 24px;
+            text-align: center;
+            font-size: 15px;
+            border: 1px solid #eef2f6;
+            transition: 0.2s;
+        }
+
+        .why-new-grid div:hover {
+            border-color: #0052CC;
+            background: #fff;
+        }
+
+        .why-new-grid div br {
+            display: block;
+        }
+
+        .why-new-grid div strong {
+            display: block;
+            font-size: 17px;
+            margin: 4px 0;
+        }
+
+        /* ===== COMING SOON ===== */
+        .coming-new-section {
+            padding: 50px 0;
+            background: #f8fafc;
+        }
+
+        .coming-new-section h2 {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 32px;
+        }
+
+        .coming-new-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .coming-new-grid div {
+            background: #ffffff;
+            padding: 24px 16px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid #eef2f6;
+            font-size: 15px;
+            transition: 0.2s;
+        }
+
+        .coming-new-grid div:hover {
+            border-color: #0052CC;
+            transform: translateY(-3px);
+        }
+
+        .coming-new-grid div br {
+            display: block;
+        }
+
+        .coming-new-grid div strong {
+            display: block;
+            font-size: 17px;
+            margin-top: 4px;
+        }
+
+        /* ===== BOTTOM CTA ===== */
+        .bottom-new-cta {
+            padding: 50px 0;
+            background: #0b1b33;
+            color: #fff;
+        }
+
+        .bottom-new-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .bottom-new-grid div {
+            padding: 12px 0;
+        }
+
+        .bottom-new-grid strong {
+            font-size: 20px;
+            font-weight: 800;
+            display: block;
+            line-height: 1.4;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0b1b33;
+            color: #94a3b8;
+            padding: 40px 0 20px;
+            border-top: 1px solid #1e2a44;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #1e2a44;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-section ul li svg {
+            display: inline;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .landing-cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-new-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .coming-new-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .bottom-new-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 16px 0;
+                gap: 12px;
+                background: #fff;
+                border-top: 1px solid #e9edf2;
+                margin-top: 12px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .landing-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-new-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .coming-new-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .hero-clean {
+                padding: 20px 0 10px;
+            }
+
+            .hero-clean-image {
+                border-radius: 16px;
+                max-height: 300px;
+            }
+
+            .btn-store {
+                padding: 12px 24px;
+                font-size: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-downloads .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profession-icons {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-clean-image {
+                max-height: 220px;
+                border-radius: 12px;
+            }
+
+            .landing-card {
+                padding: 20px 16px;
+            }
+
+            .landing-card h2 {
+                font-size: 20px;
+            }
+
+            .why-new-section h2,
+            .coming-new-section h2 {
+                font-size: 26px;
+            }
+
+            .profession-icons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-content">
@@ -36,113 +624,135 @@
             </div>
         </div>
     </nav>
-<!-- Hero Banner -->
-<header class="hero-clean">
-    <img src="hero-banner.jpg"
-         alt="Taskly Report PRO - Professional photo reports"
-         class="hero-clean-image">
-</header>
 
-<!-- Main Cards -->
-<section class="landing-cards-section">
-    <div class="container landing-cards-grid">
-
-        <div class="landing-card ai-card">
-            <h2>🤖 AI Assistant</h2>
-            <p><strong>Speak naturally. Take photos. Scan documents.</strong></p>
-            <p class="small-title">Taskly AI automatically:</p>
-
-            <ul>
-                <li>Organizes photos into the correct project sections</li>
-                <li>Converts voice notes into report text</li>
-                <li>Extracts information from documents</li>
-                <li>Creates structured work reports</li>
-                <li>Saves hours of manual work</li>
-            </ul>
-
-            <div class="mini-icons">
-                <span>🖼️<br>Photos</span>
-                <span>🎤<br>Voice</span>
-                <span>📄<br>Docs</span>
-                <span>⏱️<br>Time</span>
-            </div>
+    <!-- ===== HERO BANNER (centrato) ===== -->
+    <header class="hero-clean">
+        <div class="container">
+            <img src="hero-banner.jpg"
+                 alt="Taskly Report PRO - Professional photo reports"
+                 class="hero-clean-image">
         </div>
+    </header>
 
-        <div class="landing-card professionals-card">
-            <h2>👷 Trusted by Professionals</h2>
-
-            <div class="profession-icons">
-                <div>❄️<br>HVAC</div>
-                <div>⚡<br>Electricians</div>
-                <div>🚰<br>Plumbers</div>
-                <div>🔧<br>Maintenance</div>
-                <div>🛋️<br>Furniture</div>
-                <div>🔍<br>Inspectors</div>
-                <div>☀️<br>Solar</div>
-                <div>🏢<br>Property</div>
-                <div>🚚<br>Moving</div>
-            </div>
-        </div>
-
-        <div class="landing-card workflow-card-new">
-            <h2>⚡ Simple. Fast. Powerful.</h2>
-
-            <div class="workflow-line">
-                <div>📷<span>Take Photos</span></div>
-                <strong>↓</strong>
-                <div>🎤<span>Add Notes</span></div>
-                <strong>↓</strong>
-                <div>🧠<span>AI Organizes Everything</span></div>
-                <strong>↓</strong>
-                <div>📄<span>Export Professional PDF Report</span></div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- Why Taskly -->
-<section class="why-new-section">
+ <!-- ===== DOWNLOAD BUTTONS (sotto il banner) ===== -->
+<section class="hero-downloads">
     <div class="container">
-        <h2>Why Taskly Report PRO?</h2>
+        <a href="https://apps.apple.com/it/app/taskly-report-pro/id6777208540" class="btn-store">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.iuriegutu.tasklyreport" class="btn-store">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 20.5V3.5c0-.6.4-1.1 1-.1.2.1.4.2.6.3l13.8 8c.4.2.6.6.6 1s-.2.8-.6 1l-13.8 8c-.2.1-.4.2-.6.3-.6.4-1 0-1-.1z"/>
+            </svg>
+            Google Play
+        </a>
+    </div>
+</section>
 
-        <div class="why-new-grid">
-            <div>📡<br><strong>Works offline</strong><br>on job sites</div>
-            <div>📍<br><strong>GPS evidence</strong><br>date, time, signatures</div>
-            <div>📁<br><strong>Real jobs library</strong><br>with photos</div>
-            <div>🤖<br><strong>AI assistant</strong><br>understands your work</div>
-            <div>📄<br><strong>Beautiful PDF</strong><br>professional reports</div>
-            <div>🧾<br><strong>Fast estimates</strong><br>and job documentation</div>
-            <div>👥<br><strong>One app</strong><br>for many professions</div>
+    <!-- ===== CARDS SECTION ===== -->
+    <section class="landing-cards-section" id="features">
+        <div class="container landing-cards-grid">
+
+            <div class="landing-card ai-card" id="ai">
+                <h2>🤖 AI Assistant</h2>
+                <p><strong>Speak naturally. Take photos. Scan documents.</strong></p>
+                <p class="small-title">Taskly AI automatically:</p>
+
+                <ul>
+                    <li>Organizes photos into the correct project sections</li>
+                    <li>Converts voice notes into report text</li>
+                    <li>Extracts information from documents</li>
+                    <li>Creates structured work reports</li>
+                    <li>Saves hours of manual work</li>
+                </ul>
+
+                <div class="mini-icons">
+                    <span>🖼️<br>Photos</span>
+                    <span>🎤<br>Voice</span>
+                    <span>📄<br>Docs</span>
+                    <span>⏱️<br>Time</span>
+                </div>
+            </div>
+
+            <div class="landing-card professionals-card" id="for-who">
+                <h2>👷 Trusted by Professionals</h2>
+
+                <div class="profession-icons">
+                    <div>❄️<br>HVAC</div>
+                    <div>⚡<br>Electricians</div>
+                    <div>🚰<br>Plumbers</div>
+                    <div>🔧<br>Maintenance</div>
+                    <div>🛋️<br>Furniture</div>
+                    <div>🔍<br>Inspectors</div>
+                    <div>☀️<br>Solar</div>
+                    <div>🏢<br>Property</div>
+                    <div>🚚<br>Moving</div>
+                </div>
+            </div>
+
+            <div class="landing-card workflow-card-new">
+                <h2>⚡ Simple. Fast. Powerful.</h2>
+
+                <div class="workflow-line">
+                    <div>📷<span>Take Photos</span></div>
+                    <strong>↓</strong>
+                    <div>🎤<span>Add Notes</span></div>
+                    <strong>↓</strong>
+                    <div>🧠<span>AI Organizes Everything</span></div>
+                    <strong>↓</strong>
+                    <div>📄<span>Export Professional PDF Report</span></div>
+                </div>
+            </div>
+
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Coming Soon -->
-<section class="coming-new-section">
-    <div class="container">
-        <h2>Coming Soon</h2>
+    <!-- ===== WHY SECTION ===== -->
+    <section class="why-new-section" id="why">
+        <div class="container">
+            <h2>Why Taskly Report PRO?</h2>
 
-        <div class="coming-new-grid">
-            <div>🧠<br><strong>Advanced AI Assistant</strong></div>
-            <div>📏<br><strong>Bluetooth Laser Measurements</strong></div>
-            <div>📍<br><strong>Multiple Project Locations</strong></div>
-            <div>📅<br><strong>Calendar & Maintenance Reminders</strong></div>
-            <div>🌐<br><strong>Taskly Web</strong></div>
-            <div>💰<br><strong>AI Generated Estimates</strong></div>
+            <div class="why-new-grid">
+                <div>📡<br><strong>Works offline</strong><br>on job sites</div>
+                <div>📍<br><strong>GPS evidence</strong><br>date, time, signatures</div>
+                <div>📁<br><strong>Real jobs library</strong><br>with photos</div>
+                <div>🤖<br><strong>AI assistant</strong><br>understands your work</div>
+                <div>📄<br><strong>Beautiful PDF</strong><br>professional reports</div>
+                <div>🧾<br><strong>Fast estimates</strong><br>and job documentation</div>
+                <div>👥<br><strong>One app</strong><br>for many professions</div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Bottom CTA -->
-<section class="bottom-new-cta">
-    <div class="container bottom-new-grid">
-        <div>🛡️ Your data is secure and private.</div>
-        <div><strong>Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
-        <div>★★★★★<br>Loved by technicians and field teams.</div>
-    </div>
-</section>
-    <!-- Footer -->
+    <!-- ===== COMING SOON ===== -->
+    <section class="coming-new-section" id="roadmap">
+        <div class="container">
+            <h2>Coming Soon</h2>
+
+            <div class="coming-new-grid">
+                <div>🧠<br><strong>Advanced AI Assistant</strong></div>
+                <div>📏<br><strong>Bluetooth Laser Measurements</strong></div>
+                <div>📍<br><strong>Multiple Project Locations</strong></div>
+                <div>📅<br><strong>Calendar & Maintenance Reminders</strong></div>
+                <div>🌐<br><strong>Taskly Web</strong></div>
+                <div>💰<br><strong>AI Generated Estimates</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="bottom-new-cta">
+        <div class="container bottom-new-grid">
+            <div>🛡️ Your data is secure and private.</div>
+            <div><strong>Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
+            <div>★★★★★<br>Loved by technicians and field teams.</div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-content">
@@ -199,6 +809,12 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ===== TOGGLE MENU SCRIPT ===== -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
