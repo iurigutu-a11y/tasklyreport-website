@@ -207,128 +207,130 @@ p {
 /* ============================================
    Hero Section
    ============================================ */
+
 .hero {
-    position: relative;
-    padding: 3rem 0;
-    min-height: auto;
+    display: none;
+}
+
+/* ===== CLEAN HERO BANNER ===== */
+
+.hero-clean {
+    padding: 24px 0 10px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.hero-clean .container {
+    max-width: 1500px;
+}
+
+.hero-clean-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0, 20, 40, 0.12);
+}
+
+/* ===== DOWNLOAD BUTTONS ===== */
+
+.hero-downloads {
+    padding: 18px 0 28px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.hero-downloads .container {
     display: flex;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, #0052CC 0%, #003d99 50%, #00215a 100%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    color: white;
-}
-
-.hero-text {
-    animation: fadeInUp 0.8s ease;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 0.75rem;
-    color: white;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 0.75rem;
-    animation: fadeInUp 0.8s ease 0.1s backwards;
-}
-
-.hero-description {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 0.8s ease 0.2s backwards;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
+    justify-content: center;
+    gap: 16px;
     flex-wrap: wrap;
-    animation: fadeInUp 0.8s ease 0.3s backwards;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 100;
 }
 
-.hero-buttons a {
-    pointer-events: auto !important;
-    position: relative;
-    z-index: 101;
-}
-
-.app-store-badge,
-.google-play-badge {
+.btn-store {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    width: 120px;
-    height: 40px;
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.8s ease 0.35s backwards;
-    pointer-events: auto !important;
-    z-index: 101;
+    gap: 10px;
+    padding: 16px 42px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.25s;
 }
 
-.google-play-badge:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+.btn-store:first-child {
+    background: #000;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
-.app-store-badge:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
+.btn-store:last-child {
+    background: #ffffff;
+    color: #0b1b33;
+    border: 2px solid #e9edf2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-.google-play-badge svg,
-.app-store-badge svg {
-    width: 100%;
-    height: 100%;
+.btn-store:hover {
+    transform: translateY(-3px);
 }
 
-.trust-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    animation: fadeInUp 0.8s ease 0.4s backwards;
+/* ===== HERO TEXT UNDER BUTTONS ===== */
+
+.hero-intro {
+    text-align: center;
+    padding: 0 20px 36px;
+    background: #f8fafc;
 }
 
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    color: white;
-    font-weight: 500;
-    font-size: 0.9rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-intro h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    color: #0b1b33;
+    margin-bottom: 12px;
 }
 
-.trust-badge svg {
-    width: 20px;
-    height: 20px;
-    stroke: currentColor;
+.hero-intro p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: #475569;
+    font-size: 1.1rem;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+    .hero-clean {
+        padding: 16px 0 8px;
+    }
+
+    .hero-clean-image {
+        border-radius: 14px;
+    }
+
+    .btn-store {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+
+    .hero-downloads .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-intro p {
+        font-size: 1rem;
+    }
 }
 
 /* ============================================
