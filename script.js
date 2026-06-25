@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', String(isExpanded));
             
             // Animate menu toggle button
             const spans = menuToggle.querySelectorAll('span');
-            if (navLinks.classList.contains('active')) {
+            if (isExpanded) {
                 spans[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navLinks.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
                 const spans = menuToggle.querySelectorAll('span');
                 spans[0].style.transform = 'none';
                 spans[1].style.opacity = '1';
@@ -182,11 +185,12 @@ setupFormHandling();
 // Performance Monitoring (no external dependencies)
 // ============================================
 function logPerformanceMetrics() {
-    if (window.performance && window.performance.timing) {
+    if (window.PerformanceObserver) {
         window.addEventListener('load', function() {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            // Page load time is available but not logged anywhere to maintain no-tracking policy
+            const entries = performance.getEntriesByType('navigation');
+            if (entries.length > 0) {
+                // Page load timing available via Navigation Timing API (no tracking)
+            }
         });
     }
 }
@@ -205,6 +209,7 @@ function setupKeyboardNavigation() {
             if (navLinks && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 if (menuToggle) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
                     const spans = menuToggle.querySelectorAll('span');
                     spans[0].style.transform = 'none';
                     spans[1].style.opacity = '1';
