@@ -268,37 +268,12 @@ function setupVisibilityTracking() {
 setupVisibilityTracking();
 // ===== LANGUAGE AUTO DETECTION =====
 
-document.addEventListener("DOMContentLoaded", () => {
-  const supportedLanguages = [
-  "en",
-  "it",
-  "ru",
-  "de",
-  "fr",
-  "es",
-  "pl",
-  "ro",
-  "hu",
-  "sl",
-  "zh",
-  "pt",
-  "nl"
-];
-
-  const savedLanguage = localStorage.getItem("taskly_language");
-
-  const browserLanguage = (navigator.language || "en")
-    .toLowerCase()
-    .split("-")[0];
-
-  const language =
-    savedLanguage ||
-    (supportedLanguages.includes(browserLanguage) ? browserLanguage : "en");
-
-  applyTranslations(language);
-});
-
 function applyTranslations(language) {
+  if (typeof translations === "undefined") {
+    console.error("translations.js is not loaded");
+    return;
+  }
+
   if (!translations[language]) {
     language = "en";
   }
@@ -312,5 +287,26 @@ function applyTranslations(language) {
       element.textContent = translations[language][key];
     }
   });
+
+  localStorage.setItem("taskly_language", language);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const supportedLanguages = [
+    "en", "it", "ru", "de", "fr", "es", "pl", "ro", "hu", "sl", "zh", "pt", "nl"
+  ];
+
+  const savedLanguage = localStorage.getItem("taskly_language");
+
+  const browserLanguage = (navigator.language || "en")
+    .toLowerCase()
+    .split("-")[0];
+
+  const language =
+    savedLanguage ||
+    (supportedLanguages.includes(browserLanguage) ? browserLanguage : "en");
+
+  applyTranslations(language);
+}
+);
 console.log('Taskly Report PRO - Landing page loaded successfully');
