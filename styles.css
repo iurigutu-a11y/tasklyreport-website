@@ -1990,3 +1990,6 @@ p {
         min-height: auto;
     }
 }
+.pricing-section {
+    background: red !important;
+}
