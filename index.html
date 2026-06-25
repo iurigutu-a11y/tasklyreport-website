@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Taskly Report PRO - Professional photo reports for field professionals. Create detailed PDF reports from photos with GPS, signatures, and voice notes.">
     <meta name="theme-color" content="#0052CC">
-    <title>Taskly Report PRO - Professional Photo Reports</title>
+    <title data-i18n="pageTitle">Taskly Report PRO - Professional Photo Reports</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
                         <rect x="4" y="4" width="24" height="24" rx="4" fill="#0052CC"/>
                         <path d="M10 14L14 18L22 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span>Taskly Report PRO</span>
+                    <span data-i18n="logoText">Taskly Report PRO</span>
                 </div>
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <span></span>
@@ -27,18 +27,18 @@
                     <span></span>
                 </button>
                 <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#why">Why Taskly</a></li>
-                    <li><a href="#ai">AI Assistant</a></li>
-                    <li><a href="#for-who">For Who</a></li>
-                    <li><a href="#roadmap">Coming Soon</a></li>
-                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                    <li><a href="#features" data-i18n="navFeatures">Features</a></li>
+                    <li><a href="#why" data-i18n="navWhy">Why Taskly</a></li>
+                    <li><a href="#ai" data-i18n="navAI">AI Assistant</a></li>
+                    <li><a href="#for-who" data-i18n="navWho">For Who</a></li>
+                    <li><a href="#roadmap" data-i18n="navRoadmap">Coming Soon</a></li>
+                    <li><a href="#contact" class="nav-cta" data-i18n="navContact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ===== HERO BANNER (центрированный, шире) ===== -->
+    <!-- ===== HERO BANNER ===== -->
     <header class="hero-clean">
         <div class="container">
             <img src="hero-banner.jpg"
@@ -47,16 +47,16 @@
         </div>
     </header>
 
-    <!-- ===== DOWNLOAD BUTTONS (увеличенные) ===== -->
+    <!-- ===== DOWNLOAD BUTTONS ===== -->
     <section class="hero-downloads">
         <div class="container">
-            <a href="https://apps.apple.com/it/app/taskly-report-pro/id6777208540" class="btn-store">
+            <a href="https://apps.apple.com/it/app/taskly-report-pro/id6777208540" class="btn-store" data-i18n="appStore">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 App Store
             </a>
-            <a href="https://play.google.com/store/apps/details?id=com.iuriegutu.tasklyreport" class="btn-store">
+            <a href="https://play.google.com/store/apps/details?id=com.iuriegutu.tasklyreport" class="btn-store" data-i18n="googlePlay">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3 20.5V3.5c0-.6.4-1.1 1-.1.2.1.4.2.6.3l13.8 8c.4.2.6.6.6 1s-.2.8-.6 1l-13.8 8c-.2.1-.4.2-.6.3-.6.4-1 0-1-.1z"/>
                 </svg>
@@ -65,11 +65,11 @@
         </div>
     </section>
 
-    <!-- ===== HERO TEXT (новый блок — понятное описание) ===== -->
+    <!-- ===== HERO TEXT ===== -->
     <section class="hero-text">
         <div class="container">
-            <h1>Professional Reports for Technicians</h1>
-            <p>
+            <h1 data-i18n="heroTitle">Professional Reports for Technicians</h1>
+            <p data-i18n="heroSubtitle">
                 Create PDF reports with photos, GPS locations,
                 signatures, voice notes and AI assistance.
             </p>
@@ -81,179 +81,175 @@
         <div class="container landing-cards-grid">
 
             <div class="landing-card ai-card" id="ai">
-                <h2>🤖 AI Assistant</h2>
-                <p><strong>Speak naturally. Take photos. Scan documents.</strong></p>
-                <p class="small-title">Taskly AI automatically:</p>
+                <h2 data-i18n="cardAITitle">🤖 AI Assistant</h2>
+                <p><strong data-i18n="cardAISub">Speak naturally. Take photos. Scan documents.</strong></p>
+                <p class="small-title" data-i18n="cardAIDesc">Taskly AI automatically:</p>
 
                 <ul>
-                    <li>Organizes photos into the correct project sections</li>
-                    <li>Converts voice notes into report text</li>
-                    <li>Extracts information from documents</li>
-                    <li>Creates structured work reports</li>
-                    <li>Saves hours of manual work</li>
+                    <li data-i18n="ai1">Organizes photos into the correct project sections</li>
+                    <li data-i18n="ai2">Converts voice notes into report text</li>
+                    <li data-i18n="ai3">Extracts information from documents</li>
+                    <li data-i18n="ai4">Creates structured work reports</li>
+                    <li data-i18n="ai5">Saves hours of manual work</li>
                 </ul>
 
                 <div class="mini-icons">
-                    <span>🖼️<br>Photos</span>
-                    <span>🎤<br>Voice</span>
-                    <span>📄<br>Docs</span>
-                    <span>⏱️<br>Time</span>
+                    <span data-i18n="iconPhotos">🖼️<br>Photos</span>
+                    <span data-i18n="iconVoice">🎤<br>Voice</span>
+                    <span data-i18n="iconDocs">📄<br>Docs</span>
+                    <span data-i18n="iconTime">⏱️<br>Time</span>
                 </div>
             </div>
 
             <div class="landing-card professionals-card" id="for-who">
-                <h2>👷 Trusted by Professionals</h2>
+                <h2 data-i18n="cardTrustedTitle">👷 Trusted by Professionals</h2>
 
                 <div class="profession-icons">
-                    <div>❄️<br>HVAC</div>
-                    <div>⚡<br>Electricians</div>
-                    <div>🚰<br>Plumbers</div>
-                    <div>🔧<br>Maintenance</div>
-                    <div>🛋️<br>Furniture</div>
-                    <div>🔍<br>Inspectors</div>
-                    <div>☀️<br>Solar</div>
-                    <div>🏢<br>Property</div>
-                    <div>🚚<br>Moving</div>
+                    <div data-i18n="profHVAC">❄️<br>HVAC</div>
+                    <div data-i18n="profElectricians">⚡<br>Electricians</div>
+                    <div data-i18n="profPlumbers">🚰<br>Plumbers</div>
+                    <div data-i18n="profMaintenance">🔧<br>Maintenance</div>
+                    <div data-i18n="profFurniture">🛋️<br>Furniture</div>
+                    <div data-i18n="profInspectors">🔍<br>Inspectors</div>
+                    <div data-i18n="profSolar">☀️<br>Solar</div>
+                    <div data-i18n="profProperty">🏢<br>Property</div>
+                    <div data-i18n="profMoving">🚚<br>Moving</div>
                 </div>
             </div>
 
             <div class="landing-card workflow-card-new">
-                <h2>⚡ Simple. Fast. Powerful.</h2>
+                <h2 data-i18n="cardFlowTitle">⚡ Simple. Fast. Powerful.</h2>
 
                 <div class="workflow-line">
-                    <div>📷<span>Take Photos</span></div>
+                    <div data-i18n="flowPhotos">📷<span>Take Photos</span></div>
                     <strong>↓</strong>
-                    <div>🎤<span>Add Notes</span></div>
+                    <div data-i18n="flowNotes">🎤<span>Add Notes</span></div>
                     <strong>↓</strong>
-                    <div>🧠<span>AI Organizes Everything</span></div>
+                    <div data-i18n="flowAI">🧠<span>AI Organizes Everything</span></div>
                     <strong>↓</strong>
-                    <div>📄<span>Export Professional PDF Report</span></div>
+                    <div data-i18n="flowPDF">📄<span>Export Professional PDF Report</span></div>
                 </div>
             </div>
 
         </div>
     </section>
 
- <section class="pricing-section" id="pricing">
-    <div class="container">
+    <!-- ===== PRICING SECTION ===== -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
 
-        <div class="pricing-header">
-            <h2>Start free. Upgrade when ready.</h2>
-            <p>No credit card required to get started.</p>
-        </div>
+            <div class="pricing-header">
+                <h2 data-i18n="pricingTitle">Start free. Upgrade when ready.</h2>
+                <p data-i18n="pricingSubtitle">No credit card required to get started.</p>
+            </div>
 
-        <div class="pricing-toggle">
-            <button class="active">Monthly</button>
-            <button>Yearly <span>Save 30%</span></button>
-        </div>
+            <div class="pricing-toggle">
+                <button class="active" data-i18n="pricingMonthly">Monthly</button>
+                <button data-i18n="pricingYearly">Yearly <span data-i18n="pricingSave">Save 30%</span></button>
+            </div>
 
-        <div class="pricing-grid">
+            <div class="pricing-grid">
 
-            <!-- FREE -->
+                <!-- FREE -->
+                <div class="pricing-card free">
+                    <h3 data-i18n="planFree">Free</h3>
 
-            <div class="pricing-card free">
+                    <div class="price">
+                        <span class="amount" data-i18n="priceFree">€0</span>
+                        <span class="period" data-i18n="periodFree">/ forever</span>
+                    </div>
 
-                <h3>Free</h3>
+                    <p class="pricing-description" data-i18n="descFree">
+                        Perfect for trying Taskly on real jobs.
+                    </p>
 
-                <div class="price">
-                    <span class="amount">€0</span>
-                    <span class="period">/ forever</span>
+                    <ul class="pricing-features">
+                        <li data-i18n="free1">✓ Up to 5 projects</li>
+                        <li data-i18n="free2">✓ Up to 10 photos per project</li>
+                        <li data-i18n="free3">✓ Basic PDF reports</li>
+                        <li data-i18n="free4">✓ GPS location</li>
+                        <li data-i18n="free5">✓ Client information</li>
+                        <li data-i18n="free6">✓ Work steps</li>
+                        <li data-i18n="free7">✓ Local storage</li>
+
+                        <li class="disabled" data-i18n="freeDisabled1">✕ AI Assistant</li>
+                        <li class="disabled" data-i18n="freeDisabled2">✕ Digital signatures</li>
+                        <li class="disabled" data-i18n="freeDisabled3">✕ Sync & Backup</li>
+                    </ul>
+
+                    <a href="#" class="btn-pricing btn-free" data-i18n="btnFree">
+                        Download Free
+                    </a>
                 </div>
 
-                <p class="pricing-description">
-                    Perfect for trying Taskly on real jobs.
-                </p>
+                <!-- PRO -->
+                <div class="pricing-card pro">
+                    <div class="badge" data-i18n="badgePopular">
+                        ⭐ Most Popular
+                    </div>
 
-                <ul class="pricing-features">
-                    <li>✓ Up to 5 projects</li>
-                    <li>✓ Up to 10 photos per project</li>
-                    <li>✓ Basic PDF reports</li>
-                    <li>✓ GPS location</li>
-                    <li>✓ Client information</li>
-                    <li>✓ Work steps</li>
-                    <li>✓ Local storage</li>
+                    <h3 data-i18n="planPro">Pro</h3>
 
-                    <li class="disabled">✕ AI Assistant</li>
-                    <li class="disabled">✕ Digital signatures</li>
-                    <li class="disabled">✕ Sync & Backup</li>
-                </ul>
+                    <div class="price">
+                        <span class="amount" data-i18n="pricePro">€5.99</span>
+                        <span class="period" data-i18n="periodPro">/ month</span>
+                    </div>
 
-                <a href="#" class="btn-pricing btn-free">
-                    Download Free
-                </a>
+                    <p class="pricing-description" data-i18n="descPro">
+                        Built for real field work.
+                    </p>
+
+                    <ul class="pricing-features">
+                        <li data-i18n="pro1">✓ Unlimited projects</li>
+                        <li data-i18n="pro2">✓ Unlimited photos</li>
+                        <li data-i18n="pro3">✓ Professional PDF reports</li>
+                        <li data-i18n="pro4">✓ AI Assistant</li>
+                        <li data-i18n="pro5">✓ Voice-to-text notes</li>
+                        <li data-i18n="pro6">✓ Digital signatures</li>
+                        <li data-i18n="pro7">✓ Document scanning</li>
+                        <li data-i18n="pro8">✓ Photo annotations</li>
+                        <li data-i18n="pro9">✓ GPS, date & time evidence</li>
+                        <li data-i18n="pro10">✓ Export & Backup (.taskly)</li>
+                        <li data-i18n="pro11">✓ Priority support</li>
+                        <li data-i18n="pro12">✓ All future Pro features</li>
+                    </ul>
+
+                    <a href="#" class="btn-pricing btn-pro" data-i18n="btnPro">
+                        Start Pro Trial
+                    </a>
+
+                    <div class="trial-info" data-i18n="trialInfo">
+                        14-day free trial · Cancel anytime
+                    </div>
+
+                    <a href="#" class="promo-link" data-i18n="promoLink">
+                        🎁 Have a Promo Code?
+                    </a>
+                </div>
 
             </div>
 
-            <!-- PRO -->
-
-            <div class="pricing-card pro">
-
-                <div class="badge">
-                    ⭐ Most Popular
-                </div>
-
-                <h3>Pro</h3>
-
-                <div class="price">
-                    <span class="amount">€5.99</span>
-                    <span class="period">/ month</span>
-                </div>
-
-                <p class="pricing-description">
-                    Built for real field work.
-                </p>
-
-                <ul class="pricing-features">
-                    <li>✓ Unlimited projects</li>
-                    <li>✓ Unlimited photos</li>
-                    <li>✓ Professional PDF reports</li>
-                    <li>✓ AI Assistant</li>
-                    <li>✓ Voice-to-text notes</li>
-                    <li>✓ Digital signatures</li>
-                    <li>✓ Document scanning</li>
-                    <li>✓ Photo annotations</li>
-                    <li>✓ GPS, date & time evidence</li>
-                    <li>✓ Export & Backup (.taskly)</li>
-                    <li>✓ Priority support</li>
-                    <li>✓ All future Pro features</li>
-                </ul>
-
-                <a href="#" class="btn-pricing btn-pro">
-                    Start Pro Trial
-                </a>
-
-                <div class="trial-info">
-                    14-day free trial · Cancel anytime
-                </div>
-
-                <a href="#" class="promo-link">
-                    🎁 Have a Promo Code?
-                </a>
-
+            <div class="pricing-footer" data-i18n="pricingFooter">
+                🔒 Your data stays on your device.
+                Cancel anytime from App Store or Google Play settings.
             </div>
 
         </div>
+    </section>
 
-        <div class="pricing-footer">
-            🔒 Your data stays on your device.
-            Cancel anytime from App Store or Google Play settings.
-        </div>
-
-    </div>
-</section>
     <!-- ===== WHY SECTION ===== -->
     <section class="why-new-section" id="why">
         <div class="container">
-            <h2>Why Taskly Report PRO?</h2>
+            <h2 data-i18n="whyTitle">Why Taskly Report PRO?</h2>
 
             <div class="why-new-grid">
-                <div>📡<br><strong>Works offline</strong><br>on job sites</div>
-                <div>📍<br><strong>GPS evidence</strong><br>date, time, signatures</div>
-                <div>📁<br><strong>Real jobs library</strong><br>with photos</div>
-                <div>🤖<br><strong>AI assistant</strong><br>understands your work</div>
-                <div>📄<br><strong>Beautiful PDF</strong><br>professional reports</div>
-                <div>🧾<br><strong>Fast estimates</strong><br>and job documentation</div>
-                <div>👥<br><strong>One app</strong><br>for many professions</div>
+                <div data-i18n="why1">📡<br><strong>Works offline</strong><br>on job sites</div>
+                <div data-i18n="why2">📍<br><strong>GPS evidence</strong><br>date, time, signatures</div>
+                <div data-i18n="why3">📁<br><strong>Real jobs library</strong><br>with photos</div>
+                <div data-i18n="why4">🤖<br><strong>AI assistant</strong><br>understands your work</div>
+                <div data-i18n="why5">📄<br><strong>Beautiful PDF</strong><br>professional reports</div>
+                <div data-i18n="why6">🧾<br><strong>Fast estimates</strong><br>and job documentation</div>
+                <div data-i18n="why7">👥<br><strong>One app</strong><br>for many professions</div>
             </div>
         </div>
     </section>
@@ -261,15 +257,15 @@
     <!-- ===== COMING SOON ===== -->
     <section class="coming-new-section" id="roadmap">
         <div class="container">
-            <h2>Coming Soon</h2>
+            <h2 data-i18n="comingTitle">Coming Soon</h2>
 
             <div class="coming-new-grid">
-                <div>🧠<br><strong>Advanced AI Assistant</strong></div>
-                <div>📏<br><strong>Bluetooth Laser Measurements</strong></div>
-                <div>📍<br><strong>Multiple Project Locations</strong></div>
-                <div>📅<br><strong>Calendar & Maintenance Reminders</strong></div>
-                <div>🌐<br><strong>Taskly Web</strong></div>
-                <div>💰<br><strong>AI Generated Estimates</strong></div>
+                <div data-i18n="coming1">🧠<br><strong>Advanced AI Assistant</strong></div>
+                <div data-i18n="coming2">📏<br><strong>Bluetooth Laser Measurements</strong></div>
+                <div data-i18n="coming3">📍<br><strong>Multiple Project Locations</strong></div>
+                <div data-i18n="coming4">📅<br><strong>Calendar & Maintenance Reminders</strong></div>
+                <div data-i18n="coming5">🌐<br><strong>Taskly Web</strong></div>
+                <div data-i18n="coming6">💰<br><strong>AI Generated Estimates</strong></div>
             </div>
         </div>
     </section>
@@ -277,9 +273,9 @@
     <!-- ===== BOTTOM CTA ===== -->
     <section class="bottom-new-cta">
         <div class="container bottom-new-grid">
-            <div>🛡️ Your data is secure and private.</div>
-            <div><strong>Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
-            <div>★★★★★<br>Loved by technicians and field teams.</div>
+            <div data-i18n="ctaSecure">🛡️ Your data is secure and private.</div>
+            <div data-i18n="ctaBuilt"><strong>Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
+            <div data-i18n="ctaStars">★★★★★<br>Loved by technicians and field teams.</div>
         </div>
     </section>
 
@@ -293,52 +289,56 @@
                             <rect x="4" y="4" width="24" height="24" rx="4" fill="#0052CC"/>
                             <path d="M10 14L14 18L22 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span>Taskly Report PRO</span>
+                        <span data-i18n="footerLogo">Taskly Report PRO</span>
                     </div>
-                    <p>Professional photo reports for field professionals</p>
+                    <p data-i18n="footerDesc">Professional photo reports for field professionals</p>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footerQuick">Quick Links</h4>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#why">Why Taskly</a></li>
-                        <li><a href="#ai">AI Assistant</a></li>
-                        <li><a href="#for-who">For Who</a></li>
-                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#features" data-i18n="footerFeatures">Features</a></li>
+                        <li><a href="#why" data-i18n="footerWhy">Why Taskly</a></li>
+                        <li><a href="#ai" data-i18n="footerAI">AI Assistant</a></li>
+                        <li><a href="#for-who" data-i18n="footerWho">For Who</a></li>
+                        <li><a href="#roadmap" data-i18n="footerRoadmap">Roadmap</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Contact & Support</h4>
+                    <h4 data-i18n="footerContact">Contact & Support</h4>
                     <ul>
                         <li><a href="mailto:iurigutu@gmail.com">iurigutu@gmail.com</a></li>
-                        <li><a href="support.html">Support</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="support.html" data-i18n="footerSupport">Support</a></li>
+                        <li><a href="faq.html" data-i18n="footerFAQ">FAQ</a></li>
                         <li>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; margin-right: 8px;">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            Carpenedolo, Brescia, Italy
+                            <span data-i18n="footerAddress">Carpenedolo, Brescia, Italy</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footerLegal">Legal</h4>
                     <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Use</a></li>
+                        <li><a href="privacy.html" data-i18n="footerPrivacy">Privacy Policy</a></li>
+                        <li><a href="terms.html" data-i18n="footerTerms">Terms of Use</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Taskly Report PRO. All rights reserved.</p>
+                <p data-i18n="footerCopy">&copy; 2026 Taskly Report PRO. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 
     <!-- ===== TOGGLE MENU SCRIPT ===== -->
     <script>

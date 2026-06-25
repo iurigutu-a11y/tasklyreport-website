@@ -266,5 +266,51 @@ function setupVisibilityTracking() {
 }
 
 setupVisibilityTracking();
+// ===== LANGUAGE AUTO DETECTION =====
 
+document.addEventListener("DOMContentLoaded", () => {
+  const supportedLanguages = [
+  "en",
+  "it",
+  "ru",
+  "de",
+  "fr",
+  "es",
+  "pl",
+  "ro",
+  "hu",
+  "sl",
+  "zh",
+  "pt",
+  "nl"
+];
+
+  const savedLanguage = localStorage.getItem("taskly_language");
+
+  const browserLanguage = (navigator.language || "en")
+    .toLowerCase()
+    .split("-")[0];
+
+  const language =
+    savedLanguage ||
+    (supportedLanguages.includes(browserLanguage) ? browserLanguage : "en");
+
+  applyTranslations(language);
+});
+
+function applyTranslations(language) {
+  if (!translations[language]) {
+    language = "en";
+  }
+
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+
+    if (translations[language][key]) {
+      element.textContent = translations[language][key];
+    }
+  });
+}
 console.log('Taskly Report PRO - Landing page loaded successfully');
