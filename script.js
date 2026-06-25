@@ -185,14 +185,8 @@ setupFormHandling();
 // Performance Monitoring (no external dependencies)
 // ============================================
 function logPerformanceMetrics() {
-    if (window.PerformanceObserver) {
-        window.addEventListener('load', function() {
-            const entries = performance.getEntriesByType('navigation');
-            if (entries.length > 0) {
-                // Page load timing available via Navigation Timing API (no tracking)
-            }
-        });
-    }
+    // Navigation Timing API available for future use if needed.
+    // No metrics are currently collected to maintain the no-tracking policy.
 }
 
 logPerformanceMetrics();
