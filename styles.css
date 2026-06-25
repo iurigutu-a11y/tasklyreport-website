@@ -1636,3 +1636,152 @@ p {
     object-fit: contain !important;
     margin: 0 auto !important;
 }
+/* ===== PRICING ===== */
+
+.pricing-section {
+    padding: 80px 0;
+    background: #111827;
+    color: white;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-header h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.pricing-header p {
+    color: #9ca3af;
+}
+
+.pricing-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.pricing-toggle button {
+    border: none;
+    background: #1f2937;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.pricing-toggle .active {
+    background: #2563eb;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: #1f2937;
+    border-radius: 24px;
+    padding: 32px;
+    border: 1px solid #374151;
+}
+
+.pricing-card.pro {
+    border: 2px solid #2563eb;
+}
+
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.price {
+    margin: 16px 0;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.period {
+    color: #9ca3af;
+}
+
+.pricing-description {
+    color: #d1d5db;
+    margin-bottom: 24px;
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.pricing-features li {
+    margin-bottom: 12px;
+}
+
+.pricing-features .disabled {
+    color: #6b7280;
+}
+
+.btn-pricing {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+.btn-free {
+    border: 1px solid #4b5563;
+    color: white;
+}
+
+.btn-pro {
+    background: #2563eb;
+    color: white;
+}
+
+.trial-info {
+    text-align: center;
+    margin-top: 14px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.promo-link {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+}
