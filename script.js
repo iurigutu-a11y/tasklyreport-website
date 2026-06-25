@@ -266,15 +266,15 @@ function setupVisibilityTracking() {
 }
 
 setupVisibilityTracking();
-// ===== LANGUAGE AUTO DETECTION =====
 
-function applyTranslations(language) {
-  if (typeof translations === "undefined") {
+
+window.applyTranslations = function(language) {
+  if (!window.translations) {
     console.error("translations.js is not loaded");
     return;
   }
 
-  if (!translations[language]) {
+  if (!window.translations[language]) {
     language = "en";
   }
 
@@ -283,13 +283,15 @@ function applyTranslations(language) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
 
-    if (translations[language][key]) {
-      element.textContent = translations[language][key];
+    if (window.translations[language][key]) {
+      element.textContent = window.translations[language][key];
     }
   });
 
   localStorage.setItem("taskly_language", language);
-}
+};
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const supportedLanguages = [
