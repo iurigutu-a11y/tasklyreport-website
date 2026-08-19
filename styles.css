@@ -808,8 +808,62 @@
         }
 
         @media (max-width: 480px) {
+            .hero-section {
+                padding: 28px 0 36px;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+                line-height: 1.1;
+                letter-spacing: -0.4px;
+                margin-bottom: 14px;
+            }
+
+            .hero-subtitle {
+                font-size: 17px;
+                line-height: 1.45;
+                padding: 0 4px;
+                margin-bottom: 10px;
+            }
+
+            .hero-tagline {
+                margin-bottom: 20px;
+            }
+
+            .hero-visual {
+                margin-top: 4px;
+            }
+
+            .hero-robot-image {
+                width: 76vw;
+                max-width: 300px;
+            }
+
+            .hero-cta-row {
+                align-items: center;
+                gap: 12px;
+            }
+
+            .btn-store {
+                width: auto;
+                max-width: 100%;
+                min-height: 48px;
+                padding: 13px 20px;
+                font-size: 15px;
+            }
+
+            .meet-taskly-section {
+                padding: 36px 0;
+            }
+
+            .meet-taskly-content h2 {
+                font-size: 28px;
+                line-height: 1.15;
+            }
+
             .meet-taskly-visual img {
-                max-width: 280px;
+                width: 66vw;
+                max-width: 260px;
             }
 
             .landing-card {
@@ -829,9 +883,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .hero-robot-image {
-                max-width: 220px;
-            }
         }
         /* ===== PRICING SECTION ===== */
 
