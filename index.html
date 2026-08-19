@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Taskly Report PRO - Professional photo reports for field professionals. Create detailed PDF reports from photos with GPS, signatures, and voice notes.">
+    <meta name="description" content="Taskly Report PRO - Professional photo reports and AI Assistant for field professionals. Create PDF reports with photos, GPS, signatures and voice notes.">
     <meta name="theme-color" content="#0052CC">
+    <link rel="canonical" href="https://tasklyreport.com/">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Taskly Report PRO - Professional Photo Reports">
+    <meta property="og:url" content="https://tasklyreport.com/">
+    <meta property="og:title" content="Taskly Report PRO - Professional Reports & AI Assistant">
     <meta property="og:description" content="Create PDF reports with photos, GPS locations, signatures, voice notes and AI assistance. Built for field professionals.">
+    <meta property="og:image" content="https://tasklyreport.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Taskly Report PRO - Professional Photo Reports">
+    <meta name="twitter:title" content="Taskly Report PRO - Professional Reports & AI Assistant">
     <meta name="twitter:description" content="Create PDF reports with photos, GPS locations, signatures, voice notes and AI assistance.">
-    <title>Taskly Report PRO - Professional Photo Reports</title>
+    <meta name="twitter:image" content="https://tasklyreport.com/og-image.jpg">
+    <title>Taskly Report PRO — Professional Reports & AI Assistant</title>
     <link rel="stylesheet" href="styles.css">
     <script src="./translations.js" defer></script>
     <script src="./script.js" defer></script>
@@ -47,43 +53,66 @@
         </div>
     </nav>
 
-    <!-- ===== HERO BANNER ===== -->
+    <!-- ===== HERO ===== -->
     <main>
-    <header class="hero-clean">
-        <div class="container">
-            <img src="hero-banner.jpg"
-                 alt="Taskly Report PRO - Professional photo reports"
-                 class="hero-clean-image"
-                 width="1400" height="500">
+    <header class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="hero-kicker" data-i18n="heroKicker">TASKLY REPORT PRO</p>
+                <h1 data-i18n="heroTitle">Your AI Partner on Every Job</h1>
+                <p class="hero-subtitle" data-i18n="heroSubtitle">
+                    Photos, GPS locations, signatures, voice notes and AI-powered PDF reports — all in one app.
+                </p>
+                <p class="hero-tagline" data-i18n="heroTagline">Fast. Simple. Professional.</p>
+
+                <div class="hero-cta-row">
+                    <a href="https://apps.apple.com/it/app/taskly-report-pro/id6777208540" class="btn-store" data-i18n="appStore" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        App Store
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.iuriegutu.tasklyreport" class="btn-store" data-i18n="googlePlay" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M3 20.5V3.5c0-.6.4-1.1 1-.1.2.1.4.2.6.3l13.8 8c.4.2.6.6.6 1s-.2.8-.6 1l-13.8 8c-.2.1-.4.2-.6.3-.6.4-1 0-1-.1z"/>
+                        </svg>
+                        Google Play
+                    </a>
+                </div>
+
+                <a href="#features" class="hero-link-more" data-i18n="heroCtaMore">Learn More</a>
+            </div>
+
+            <div class="hero-visual">
+                <picture>
+                    <source srcset="taskly-robot-hero.webp" type="image/webp">
+                    <img src="taskly-robot-hero.png"
+                         alt="Taskly Report PRO AI assistant robot mascot with a professional tool belt, holding a phone showing the app"
+                         class="hero-robot-image"
+                         width="1022" height="946">
+                </picture>
+            </div>
         </div>
     </header>
 
-    <!-- ===== DOWNLOAD BUTTONS ===== -->
-    <section class="hero-downloads">
-        <div class="container">
-            <a href="https://apps.apple.com/it/app/taskly-report-pro/id6777208540" class="btn-store" data-i18n="appStore" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                App Store
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.iuriegutu.tasklyreport" class="btn-store" data-i18n="googlePlay" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M3 20.5V3.5c0-.6.4-1.1 1-.1.2.1.4.2.6.3l13.8 8c.4.2.6.6.6 1s-.2.8-.6 1l-13.8 8c-.2.1-.4.2-.6.3-.6.4-1 0-1-.1z"/>
-                </svg>
-                Google Play
-            </a>
-        </div>
-    </section>
-
-    <!-- ===== HERO TEXT ===== -->
-    <section class="hero-text">
-        <div class="container">
-            <h1 data-i18n="heroTitle">Professional Reports for Technicians</h1>
-            <p data-i18n="heroSubtitle">
-                Create PDF reports with photos, GPS locations,
-                signatures, voice notes and AI assistance.
-            </p>
+    <!-- ===== MEET TASKLY (AI ASSISTANT) ===== -->
+    <section class="meet-taskly-section" id="ai">
+        <div class="container meet-taskly-grid">
+            <div class="meet-taskly-visual">
+                <picture>
+                    <source srcset="taskly-robot-ai.webp" type="image/webp">
+                    <img src="taskly-robot-ai.png"
+                         alt="Taskly AI assistant robot mascot"
+                         width="1000" height="871"
+                         loading="lazy">
+                </picture>
+            </div>
+            <div class="meet-taskly-content">
+                <span class="meet-badge" data-i18n="meetBadge">NEW · AI Assistant</span>
+                <h2 data-i18n="meetTitle">Meet Taskly</h2>
+                <p class="meet-subtitle" data-i18n="meetSubtitle">Your AI assistant, right on the job site</p>
+                <p class="meet-desc" data-i18n="meetDesc">Taskly helps you turn what you capture on site into a polished, professional report — faster than ever.</p>
+            </div>
         </div>
     </section>
 
@@ -91,7 +120,7 @@
     <section class="landing-cards-section" id="features">
         <div class="container landing-cards-grid">
 
-            <div class="landing-card ai-card" id="ai">
+            <div class="landing-card ai-card">
                 <h2 data-i18n="cardAITitle">🤖 AI Assistant</h2>
                 <p><strong data-i18n="cardAISub">Speak naturally. Take photos. Scan documents.</strong></p>
                 <p class="small-title" data-i18n="cardAIDesc">Taskly AI automatically:</p>
@@ -119,6 +148,8 @@
                     <div data-i18n="profHVAC">❄️<br>HVAC</div>
                     <div data-i18n="profElectricians">⚡<br>Electricians</div>
                     <div data-i18n="profPlumbers">🚰<br>Plumbers</div>
+                    <div data-i18n="profBuilders">🏗️<br>Builders</div>
+                    <div data-i18n="profTechnicians">🛠️<br>Technicians</div>
                     <div data-i18n="profMaintenance">🔧<br>Maintenance</div>
                     <div data-i18n="profFurniture">🛋️<br>Furniture</div>
                     <div data-i18n="profInspectors">🔍<br>Inspectors</div>
@@ -285,7 +316,7 @@
     <section class="bottom-new-cta">
         <div class="container bottom-new-grid">
             <div data-i18n="ctaSecure">🛡️ Your data is secure and private.</div>
-            <div data-i18n="ctaBuilt"><strong>Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
+            <div><strong data-i18n="ctaBuilt">Built for the field.<br>Powered by AI.<br>Trusted by professionals.</strong></div>
             <div data-i18n="ctaStars">★★★★★<br>Loved by technicians and field teams.</div>
         </div>
     </section>
@@ -304,6 +335,10 @@
                         <span data-i18n="footerLogo">Taskly Report PRO</span>
                     </div>
                     <p data-i18n="footerDesc">Professional photo reports for field professionals</p>
+                    <a href="download.html" class="footer-qr" aria-label="Scan or click to download Taskly Report PRO">
+                        <img src="qr-download.png" width="72" height="72" alt="QR code linking to the Taskly Report PRO download page" loading="lazy">
+                        <span data-i18n="scanToDownload">Scan to download</span>
+                    </a>
                 </div>
 
                 <div class="footer-section">

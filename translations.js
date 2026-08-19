@@ -13,8 +13,11 @@ window.translations = {
         navContact: "Contact",
 
         // Hero
-        heroTitle: "Professional Reports for Technicians",
-        heroSubtitle: "Create PDF reports with photos, GPS locations, signatures, voice notes and AI assistance.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Your AI Partner on Every Job",
+        heroSubtitle: "Photos, GPS locations, signatures, voice notes and AI-powered PDF reports — all in one app.",
+        heroTagline: "Fast. Simple. Professional.",
+        heroCtaMore: "Learn More",
 
         // Buttons
         appStore: "App Store",
@@ -91,12 +94,19 @@ window.translations = {
         profSolar: "☀️\nSolar",
         profProperty: "🏢\nProperty",
         profMoving: "🚚\nMoving",
+        profBuilders: "🏗️\nBuilders",
+        profTechnicians: "🛠️\nTechnicians",
 
         cardFlowTitle: "⚡ Simple. Fast. Powerful.",
         flowPhotos: "📷 Take Photos",
         flowNotes: "🎤 Add Notes",
         flowAI: "🧠 AI Organizes Everything",
         flowPDF: "📄 Export Professional PDF Report",
+
+        meetBadge: "NEW · AI Assistant",
+        meetTitle: "Meet Taskly",
+        meetSubtitle: "Your AI assistant, right on the job site",
+        meetDesc: "Taskly helps you turn what you capture on site into a polished, professional report — faster than ever.",
 
         // Why
         whyTitle: "Why Taskly Report PRO?",
@@ -138,6 +148,7 @@ window.translations = {
         footerLegal: "Legal",
         footerPrivacy: "Privacy Policy",
         footerTerms: "Terms of Use",
+        scanToDownload: "Scan to download",
         footerCopy: "© 2026 Taskly Report PRO. All rights reserved."
     },
 
@@ -152,8 +163,11 @@ window.translations = {
         navRoadmap: "Prossimamente",
         navContact: "Contatti",
 
-        heroTitle: "Report professionali per tecnici",
-        heroSubtitle: "Crea report PDF con foto, GPS, firme, note vocali e assistenza AI.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Il tuo assistente AI su ogni cantiere",
+        heroSubtitle: "Foto, posizione GPS, firme, note vocali e report PDF con AI — tutto in un'unica app.",
+        heroTagline: "Veloce. Semplice. Professionale.",
+        heroCtaMore: "Scopri di più",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -225,12 +239,19 @@ window.translations = {
         profSolar: "☀️\nInstallatori solari",
         profProperty: "🏢\nProperty Manager",
         profMoving: "🚚\nTraslochi",
+        profBuilders: "🏗️\nCostruttori",
+        profTechnicians: "🛠️\nTecnici",
 
         cardFlowTitle: "⚡ Semplice. Veloce. Potente.",
         flowPhotos: "📷 Scatta foto",
         flowNotes: "🎤 Aggiungi note",
         flowAI: "🧠 AI organizza tutto",
         flowPDF: "📄 Esporta report PDF professionale",
+
+        meetBadge: "NUOVO · Assistente AI",
+        meetTitle: "Conosci Taskly",
+        meetSubtitle: "Il tuo assistente AI, direttamente sul cantiere",
+        meetDesc: "Taskly ti aiuta a trasformare ciò che raccogli sul posto in un report professionale e curato — più velocemente che mai.",
 
         whyTitle: "Perché Taskly Report PRO?",
         why1: "📡\nFunziona offline\nnei cantieri",
@@ -268,6 +289,7 @@ window.translations = {
         footerLegal: "Legale",
         footerPrivacy: "Informativa sulla privacy",
         footerTerms: "Termini di utilizzo",
+        scanToDownload: "Scansiona per scaricare",
         footerCopy: "© 2026 Taskly Report PRO. Tutti i diritti riservati."
     },
 
@@ -282,8 +304,11 @@ window.translations = {
         navRoadmap: "Скоро",
         navContact: "Контакты",
 
-        heroTitle: "Профессиональные отчёты для специалистов",
-        heroSubtitle: "Создавайте PDF-отчёты с фото, GPS, подписями, голосовыми заметками и ИИ.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Ваш ИИ-напарник на каждом объекте",
+        heroSubtitle: "Фото, GPS-локации, подписи, голосовые заметки и PDF-отчёты с ИИ — всё в одном приложении.",
+        heroTagline: "Быстро. Просто. Профессионально.",
+        heroCtaMore: "Узнать больше",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -355,12 +380,19 @@ window.translations = {
         profSolar: "☀️\nСолнечные установки",
         profProperty: "🏢\nУправление недвижимостью",
         profMoving: "🚚\nПереезды",
+        profBuilders: "🏗️\nСтроители",
+        profTechnicians: "🛠️\nТехники",
 
         cardFlowTitle: "⚡ Просто. Быстро. Мощно.",
         flowPhotos: "📷 Снимайте фото",
         flowNotes: "🎤 Добавляйте заметки",
         flowAI: "🧠 ИИ всё организует",
         flowPDF: "📄 Экспортируйте профессиональный PDF",
+
+        meetBadge: "НОВОЕ · ИИ помощник",
+        meetTitle: "Знакомьтесь, Taskly",
+        meetSubtitle: "Ваш ИИ-помощник прямо на объекте",
+        meetDesc: "Taskly помогает быстрее превращать то, что вы фиксируете на объекте, в аккуратный профессиональный отчёт.",
 
         whyTitle: "Почему Taskly Report PRO?",
         why1: "📡\nРаботает офлайн\nна объектах",
@@ -398,6 +430,7 @@ window.translations = {
         footerLegal: "Юридическая информация",
         footerPrivacy: "Политика конфиденциальности",
         footerTerms: "Условия использования",
+        scanToDownload: "Сканируйте для скачивания",
         footerCopy: "© 2026 Taskly Report PRO. Все права защищены."
     },
 
@@ -412,8 +445,11 @@ window.translations = {
         navRoadmap: "Demnächst",
         navContact: "Kontakt",
 
-        heroTitle: "Professionelle Berichte für Techniker",
-        heroSubtitle: "Erstellen Sie PDF-Berichte mit Fotos, GPS, Unterschriften, Sprachnotizen und KI-Unterstützung.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Ihr KI-Partner auf jeder Baustelle",
+        heroSubtitle: "Fotos, GPS-Standorte, Unterschriften, Sprachnotizen und KI-gestützte PDF-Berichte — alles in einer App.",
+        heroTagline: "Schnell. Einfach. Professionell.",
+        heroCtaMore: "Mehr erfahren",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -485,12 +521,19 @@ window.translations = {
         profSolar: "☀️\nSolarinstallation",
         profProperty: "🏢\nImmobilienverwaltung",
         profMoving: "🚚\nUmzüge",
+        profBuilders: "🏗️\nBauarbeiter",
+        profTechnicians: "🛠️\nTechniker",
 
         cardFlowTitle: "⚡ Einfach. Schnell. Leistungsstark.",
         flowPhotos: "📷 Fotos aufnehmen",
         flowNotes: "🎤 Notizen hinzufügen",
         flowAI: "🧠 KI organisiert alles",
         flowPDF: "📄 Professionellen PDF-Bericht exportieren",
+
+        meetBadge: "NEU · KI-Assistent",
+        meetTitle: "Lernen Sie Taskly kennen",
+        meetSubtitle: "Ihr KI-Assistent, direkt auf der Baustelle",
+        meetDesc: "Taskly hilft Ihnen, das, was Sie vor Ort festhalten, schneller in einen professionellen Bericht zu verwandeln.",
 
         whyTitle: "Warum Taskly Report PRO?",
         why1: "📡\nArbeitet offline\nauf Baustellen",
@@ -528,6 +571,7 @@ window.translations = {
         footerLegal: "Rechtliches",
         footerPrivacy: "Datenschutzrichtlinie",
         footerTerms: "Nutzungsbedingungen",
+        scanToDownload: "Zum Download scannen",
         footerCopy: "© 2026 Taskly Report PRO. Alle Rechte vorbehalten."
     },
 
@@ -542,8 +586,11 @@ window.translations = {
         navRoadmap: "À venir",
         navContact: "Contact",
 
-        heroTitle: "Rapports professionnels pour techniciens",
-        heroSubtitle: "Créez des rapports PDF avec photos, GPS, signatures, notes vocales et assistance IA.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Votre partenaire IA sur chaque chantier",
+        heroSubtitle: "Photos, localisation GPS, signatures, notes vocales et rapports PDF assistés par IA — le tout dans une seule application.",
+        heroTagline: "Rapide. Simple. Professionnel.",
+        heroCtaMore: "En savoir plus",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -615,12 +662,19 @@ window.translations = {
         profSolar: "☀️\nSolaire",
         profProperty: "🏢\nGestion immobilière",
         profMoving: "🚚\nDéménagement",
+        profBuilders: "🏗️\nConstructeurs",
+        profTechnicians: "🛠️\nTechniciens",
 
         cardFlowTitle: "⚡ Simple. Rapide. Puissant.",
         flowPhotos: "📷 Prendre des photos",
         flowNotes: "🎤 Ajouter des notes",
         flowAI: "🧠 L'IA organise tout",
         flowPDF: "📄 Exporter un rapport PDF professionnel",
+
+        meetBadge: "NOUVEAU · Assistant IA",
+        meetTitle: "Découvrez Taskly",
+        meetSubtitle: "Votre assistant IA, directement sur le chantier",
+        meetDesc: "Taskly vous aide à transformer plus rapidement ce que vous capturez sur place en un rapport professionnel et soigné.",
 
         whyTitle: "Pourquoi Taskly Report PRO?",
         why1: "📡\nFonctionne hors ligne\nsur les chantiers",
@@ -658,6 +712,7 @@ window.translations = {
         footerLegal: "Mentions légales",
         footerPrivacy: "Politique de confidentialité",
         footerTerms: "Conditions d'utilisation",
+        scanToDownload: "Scannez pour télécharger",
         footerCopy: "© 2026 Taskly Report PRO. Tous droits réservés."
     },
 
@@ -672,8 +727,11 @@ window.translations = {
         navRoadmap: "Próximamente",
         navContact: "Contacto",
 
-        heroTitle: "Informes profesionales para técnicos",
-        heroSubtitle: "Cree informes PDF con fotos, GPS, firmas, notas de voz y asistencia IA.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Su compañero IA en cada obra",
+        heroSubtitle: "Fotos, ubicación GPS, firmas, notas de voz e informes PDF con IA — todo en una sola aplicación.",
+        heroTagline: "Rápido. Simple. Profesional.",
+        heroCtaMore: "Saber más",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -745,12 +803,19 @@ window.translations = {
         profSolar: "☀️\nSolar",
         profProperty: "🏢\nGestión inmobiliaria",
         profMoving: "🚚\nMudanzas",
+        profBuilders: "🏗️\nConstructores",
+        profTechnicians: "🛠️\nTécnicos",
 
         cardFlowTitle: "⚡ Simple. Rápido. Potente.",
         flowPhotos: "📷 Tomar fotos",
         flowNotes: "🎤 Añadir notas",
         flowAI: "🧠 La IA organiza todo",
         flowPDF: "📄 Exportar informe PDF profesional",
+
+        meetBadge: "NUEVO · Asistente IA",
+        meetTitle: "Conozca a Taskly",
+        meetSubtitle: "Su asistente IA, directamente en la obra",
+        meetDesc: "Taskly le ayuda a convertir lo que captura en el lugar en un informe profesional y cuidado, más rápido que nunca.",
 
         whyTitle: "¿Por qué Taskly Report PRO?",
         why1: "📡\nFunciona sin conexión\nen obras",
@@ -788,6 +853,7 @@ window.translations = {
         footerLegal: "Legal",
         footerPrivacy: "Política de privacidad",
         footerTerms: "Términos de uso",
+        scanToDownload: "Escanee para descargar",
         footerCopy: "© 2026 Taskly Report PRO. Todos los derechos reservados."
     },
 
@@ -802,8 +868,11 @@ window.translations = {
         navRoadmap: "Już wkrótce",
         navContact: "Kontakt",
 
-        heroTitle: "Profesjonalne raporty dla techników",
-        heroSubtitle: "Twórz raporty PDF ze zdjęciami, GPS, podpisami, notatkami głosowymi i asystentem AI.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Twój partner AI na każdej budowie",
+        heroSubtitle: "Zdjęcia, lokalizacja GPS, podpisy, notatki głosowe i raporty PDF wspierane przez AI — wszystko w jednej aplikacji.",
+        heroTagline: "Szybko. Prosto. Profesjonalnie.",
+        heroCtaMore: "Dowiedz się więcej",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -875,12 +944,19 @@ window.translations = {
         profSolar: "☀️\nInstalacje solarne",
         profProperty: "🏢\nZarządzanie nieruchomościami",
         profMoving: "🚚\nPrzeprowadzki",
+        profBuilders: "🏗️\nBudowlańcy",
+        profTechnicians: "🛠️\nTechnicy",
 
         cardFlowTitle: "⚡ Proste. Szybkie. Potężne.",
         flowPhotos: "📷 Rób zdjęcia",
         flowNotes: "🎤 Dodaj notatki",
         flowAI: "🧠 AI organizuje wszystko",
         flowPDF: "📄 Eksportuj profesjonalny raport PDF",
+
+        meetBadge: "NOWOŚĆ · Asystent AI",
+        meetTitle: "Poznaj Taskly",
+        meetSubtitle: "Twój asystent AI, prosto z placu budowy",
+        meetDesc: "Taskly pomaga szybciej zamieniać to, co rejestrujesz na miejscu, w dopracowany, profesjonalny raport.",
 
         whyTitle: "Dlaczego Taskly Report PRO?",
         why1: "📡\nDziała offline\nna budowach",
@@ -918,6 +994,7 @@ window.translations = {
         footerLegal: "Informacje prawne",
         footerPrivacy: "Polityka prywatności",
         footerTerms: "Warunki użytkowania",
+        scanToDownload: "Zeskanuj, aby pobrać",
         footerCopy: "© 2026 Taskly Report PRO. Wszelkie prawa zastrzeżone."
     },
 
@@ -932,8 +1009,11 @@ window.translations = {
         navRoadmap: "În curând",
         navContact: "Contact",
 
-        heroTitle: "Rapoarte profesionale pentru tehnicieni",
-        heroSubtitle: "Creați rapoarte PDF cu fotografii, GPS, semnături, note vocale și asistență AI.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Partenerul dvs. AI pe fiecare șantier",
+        heroSubtitle: "Fotografii, locație GPS, semnături, note vocale și rapoarte PDF asistate de AI — totul într-o singură aplicație.",
+        heroTagline: "Rapid. Simplu. Profesionist.",
+        heroCtaMore: "Aflați mai multe",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1005,12 +1085,19 @@ window.translations = {
         profSolar: "☀️\nInstalații solare",
         profProperty: "🏢\nAdministrare proprietăți",
         profMoving: "🚚\nMutări",
+        profBuilders: "🏗️\nConstructori",
+        profTechnicians: "🛠️\nTehnicieni",
 
         cardFlowTitle: "⚡ Simplu. Rapid. Puternic.",
         flowPhotos: "📷 Faceți fotografii",
         flowNotes: "🎤 Adăugați note",
         flowAI: "🧠 AI organizează totul",
         flowPDF: "📄 Exportați raport PDF profesional",
+
+        meetBadge: "NOU · Asistent AI",
+        meetTitle: "Faceți cunoștință cu Taskly",
+        meetSubtitle: "Asistentul dvs. AI, direct pe șantier",
+        meetDesc: "Taskly vă ajută să transformați mai rapid ceea ce înregistrați pe teren într-un raport profesionist, îngrijit.",
 
         whyTitle: "De ce Taskly Report PRO?",
         why1: "📡\nFuncționează offline\npe șantiere",
@@ -1048,6 +1135,7 @@ window.translations = {
         footerLegal: "Juridic",
         footerPrivacy: "Politica de confidențialitate",
         footerTerms: "Termeni de utilizare",
+        scanToDownload: "Scanați pentru descărcare",
         footerCopy: "© 2026 Taskly Report PRO. Toate drepturile rezervate."
     },
 
@@ -1062,8 +1150,11 @@ window.translations = {
         navRoadmap: "Hamarosan",
         navContact: "Kapcsolat",
 
-        heroTitle: "Professzionális jelentések technikusoknak",
-        heroSubtitle: "Készítsen PDF jelentéseket fotókkal, GPS-szel, aláírásokkal, hangjegyzetekkel és AI segítséggel.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "AI-partnere minden munkaterületen",
+        heroSubtitle: "Fotók, GPS-helyzet, aláírások, hangjegyzetek és AI-alapú PDF jelentések — mind egy alkalmazásban.",
+        heroTagline: "Gyors. Egyszerű. Professzionális.",
+        heroCtaMore: "Tudjon meg többet",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1135,12 +1226,19 @@ window.translations = {
         profSolar: "☀️\nNapelem",
         profProperty: "🏢\nIngatlanmenedzsment",
         profMoving: "🚚\nKöltöztetés",
+        profBuilders: "🏗️\nÉpítők",
+        profTechnicians: "🛠️\nTechnikusok",
 
         cardFlowTitle: "⚡ Egyszerű. Gyors. Hatékony.",
         flowPhotos: "📷 Fényképezés",
         flowNotes: "🎤 Jegyzetek hozzáadása",
         flowAI: "🧠 AI mindent rendez",
         flowPDF: "📄 Professzionális PDF jelentés exportálása",
+
+        meetBadge: "ÚJ · AI Asszisztens",
+        meetTitle: "Ismerje meg a Taskly-t",
+        meetSubtitle: "AI asszisztense, közvetlenül a helyszínen",
+        meetDesc: "A Taskly segít gyorsabban professzionális jelentéssé alakítani mindazt, amit a helyszínen rögzít.",
 
         whyTitle: "Miért Taskly Report PRO?",
         why1: "📡\nOffline működik\népítkezéseken",
@@ -1178,6 +1276,7 @@ window.translations = {
         footerLegal: "Jogi információk",
         footerPrivacy: "Adatvédelmi irányelvek",
         footerTerms: "Felhasználási feltételek",
+        scanToDownload: "Szkennelje be a letöltéshez",
         footerCopy: "© 2026 Taskly Report PRO. Minden jog fenntartva."
     },
 
@@ -1192,8 +1291,11 @@ window.translations = {
         navRoadmap: "Kmalu",
         navContact: "Kontakt",
 
-        heroTitle: "Profesionalna poročila za tehnike",
-        heroSubtitle: "Ustvarjajte PDF poročila s fotografijami, GPS, podpisi, glasovnimi zapiski in AI pomočjo.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Vaš AI partner na vsakem gradbišču",
+        heroSubtitle: "Fotografije, GPS lokacija, podpisi, glasovni zapiski in AI PDF poročila — vse v eni aplikaciji.",
+        heroTagline: "Hitro. Preprosto. Profesionalno.",
+        heroCtaMore: "Izvedite več",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1265,12 +1367,19 @@ window.translations = {
         profSolar: "☀️\nSončne instalacije",
         profProperty: "🏢\nUpravljanje nepremičnin",
         profMoving: "🚚\nSelitve",
+        profBuilders: "🏗️\nGradbeniki",
+        profTechnicians: "🛠️\nTehniki",
 
         cardFlowTitle: "⚡ Preprosto. Hitro. Močno.",
         flowPhotos: "📷 Fotografirajte",
         flowNotes: "🎤 Dodajte zapiske",
         flowAI: "🧠 AI vse organizira",
         flowPDF: "📄 Izvozite profesionalno PDF poročilo",
+
+        meetBadge: "NOVO · AI Pomočnik",
+        meetTitle: "Spoznajte Taskly",
+        meetSubtitle: "Vaš AI pomočnik, neposredno na gradbišču",
+        meetDesc: "Taskly vam pomaga hitreje spremeniti tisto, kar zabeležite na terenu, v urejeno profesionalno poročilo.",
 
         whyTitle: "Zakaj Taskly Report PRO?",
         why1: "📡\nDelo brez povezave\nna gradbiščih",
@@ -1308,6 +1417,7 @@ window.translations = {
         footerLegal: "Pravno",
         footerPrivacy: "Politika zasebnosti",
         footerTerms: "Pogoji uporabe",
+        scanToDownload: "Skenirajte za prenos",
         footerCopy: "© 2026 Taskly Report PRO. Vse pravice pridržane."
     },
 
@@ -1322,8 +1432,11 @@ window.translations = {
         navRoadmap: "即将推出",
         navContact: "联系我们",
 
-        heroTitle: "专业技术人员的专业报告",
-        heroSubtitle: "使用照片、GPS定位、签名、语音笔记和AI辅助创建PDF报告。",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "您在每个工地上的AI伙伴",
+        heroSubtitle: "照片、GPS定位、签名、语音笔记和AI驱动的PDF报告 — 全部集成在一个应用中。",
+        heroTagline: "快速。简单。专业。",
+        heroCtaMore: "了解更多",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1395,12 +1508,19 @@ window.translations = {
         profSolar: "☀️\n太阳能",
         profProperty: "🏢\n物业管理",
         profMoving: "🚚\n搬家",
+        profBuilders: "🏗️\n建筑工人",
+        profTechnicians: "🛠️\n技术人员",
 
         cardFlowTitle: "⚡ 简单. 快速. 强大.",
         flowPhotos: "📷 拍照",
         flowNotes: "🎤 添加笔记",
         flowAI: "🧠 AI整理一切",
         flowPDF: "📄 导出专业PDF报告",
+
+        meetBadge: "新功能 · AI助手",
+        meetTitle: "认识 Taskly",
+        meetSubtitle: "您的AI助手，就在工地现场",
+        meetDesc: "Taskly帮助您更快地将现场记录的内容转化为精美的专业报告。",
 
         whyTitle: "为什么选择 Taskly Report PRO？",
         why1: "📡\n离线工作\n在工地现场",
@@ -1438,6 +1558,7 @@ window.translations = {
         footerLegal: "法律信息",
         footerPrivacy: "隐私政策",
         footerTerms: "使用条款",
+        scanToDownload: "扫描下载",
         footerCopy: "© 2026 Taskly Report PRO。保留所有权利。"
     },
 
@@ -1452,8 +1573,11 @@ window.translations = {
         navRoadmap: "Em breve",
         navContact: "Contacto",
 
-        heroTitle: "Relatórios profissionais para técnicos",
-        heroSubtitle: "Crie relatórios PDF com fotos, GPS, assinaturas, notas de voz e assistência IA.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "O seu parceiro IA em cada obra",
+        heroSubtitle: "Fotos, localização GPS, assinaturas, notas de voz e relatórios PDF com IA — tudo numa só aplicação.",
+        heroTagline: "Rápido. Simples. Profissional.",
+        heroCtaMore: "Saber mais",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1525,12 +1649,19 @@ window.translations = {
         profSolar: "☀️\nSolar",
         profProperty: "🏢\nGestão de propriedades",
         profMoving: "🚚\nMudanças",
+        profBuilders: "🏗️\nConstrutores",
+        profTechnicians: "🛠️\nTécnicos",
 
         cardFlowTitle: "⚡ Simples. Rápido. Poderoso.",
         flowPhotos: "📷 Tirar fotos",
         flowNotes: "🎤 Adicionar notas",
         flowAI: "🧠 IA organiza tudo",
         flowPDF: "📄 Exportar relatório PDF profissional",
+
+        meetBadge: "NOVO · Assistente IA",
+        meetTitle: "Conheça o Taskly",
+        meetSubtitle: "O seu assistente IA, diretamente na obra",
+        meetDesc: "O Taskly ajuda-o a transformar mais rapidamente o que regista no local num relatório profissional e cuidado.",
 
         whyTitle: "Porquê Taskly Report PRO?",
         why1: "📡\nFunciona offline\nem obras",
@@ -1568,6 +1699,7 @@ window.translations = {
         footerLegal: "Legal",
         footerPrivacy: "Política de privacidade",
         footerTerms: "Termos de utilização",
+        scanToDownload: "Digitalize para descarregar",
         footerCopy: "© 2026 Taskly Report PRO. Todos os direitos reservados."
     },
 
@@ -1582,8 +1714,11 @@ window.translations = {
         navRoadmap: "Binnenkort",
         navContact: "Contact",
 
-        heroTitle: "Professionele rapporten voor technici",
-        heroSubtitle: "Maak PDF-rapporten met foto's, GPS, handtekeningen, spraaknotities en AI-assistentie.",
+        heroKicker: "TASKLY REPORT PRO",
+        heroTitle: "Jouw AI-partner op elke klus",
+        heroSubtitle: "Foto's, GPS-locaties, handtekeningen, spraaknotities en AI-gestuurde PDF-rapporten — allemaal in één app.",
+        heroTagline: "Snel. Eenvoudig. Professioneel.",
+        heroCtaMore: "Meer weten",
 
         appStore: "App Store",
         googlePlay: "Google Play",
@@ -1655,12 +1790,19 @@ window.translations = {
         profSolar: "☀️\nZonne-energie",
         profProperty: "🏢\nVastgoedbeheer",
         profMoving: "🚚\nVerhuizingen",
+        profBuilders: "🏗️\nBouwvakkers",
+        profTechnicians: "🛠️\nTechnici",
 
         cardFlowTitle: "⚡ Eenvoudig. Snel. Krachtig.",
         flowPhotos: "📷 Foto's nemen",
         flowNotes: "🎤 Notities toevoegen",
         flowAI: "🧠 AI organiseert alles",
         flowPDF: "📄 Professioneel PDF-rapport exporteren",
+
+        meetBadge: "NIEUW · AI-assistent",
+        meetTitle: "Maak kennis met Taskly",
+        meetSubtitle: "Jouw AI-assistent, rechtstreeks op de klus",
+        meetDesc: "Taskly helpt je om wat je op locatie vastlegt sneller om te zetten in een verzorgd, professioneel rapport.",
 
         whyTitle: "Waarom Taskly Report PRO?",
         why1: "📡\nWerkt offline\nop bouwplaatsen",
@@ -1698,6 +1840,7 @@ window.translations = {
         footerLegal: "Juridisch",
         footerPrivacy: "Privacybeleid",
         footerTerms: "Gebruiksvoorwaarden",
+        scanToDownload: "Scan om te downloaden",
         footerCopy: "© 2026 Taskly Report PRO. Alle rechten voorbehouden."
     }
 };
