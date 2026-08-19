@@ -12,6 +12,16 @@
             line-height: 1.6;
         }
 
+        html {
+            scroll-padding-top: 84px;
+        }
+
+        section[id],
+        footer[id],
+        #for-who {
+            scroll-margin-top: 84px;
+        }
+
         /* Увеличенная ширина контейнера */
         .container {
             max-width: 1400px;
@@ -246,7 +256,7 @@
             display: grid;
             grid-template-columns: 0.85fr 1.15fr;
             align-items: center;
-            gap: 40px;
+            gap: 28px;
         }
 
         .meet-taskly-visual {
@@ -256,7 +266,7 @@
 
         .meet-taskly-visual img {
             width: 100%;
-            max-width: 380px;
+            max-width: 360px;
             height: auto;
             display: block;
         }
@@ -789,7 +799,7 @@
             }
 
             .meet-taskly-visual img {
-                max-width: 260px;
+                max-width: 320px;
             }
 
             .profession-icons {
@@ -798,6 +808,10 @@
         }
 
         @media (max-width: 480px) {
+            .meet-taskly-visual img {
+                max-width: 280px;
+            }
+
             .landing-card {
                 padding: 20px 16px;
             }
