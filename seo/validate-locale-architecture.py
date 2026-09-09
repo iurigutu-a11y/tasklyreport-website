@@ -13,25 +13,29 @@ EXCLUSIONS = ROOT / "seo" / "validation-exclusions.json"
 
 class PageParser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.lang = None; self.title = ""; self.description = ""; self.h1 = ""; self.canonical = None; self.alternates = {}; self.links = []; self.capture = None
+        super().__init__(); self.lang = None; self.title = ""; self.description = ""; self.h1 = ""; self.intro = ""; self.canonical = None; self.alternates = {}; self.links = []; self.switch_links = {}; self.capture = None
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "html": self.lang = attrs.get("lang")
         if tag in ("title", "h1"): self.capture = tag
+        if tag == "p" and attrs.get("class") == "seo-intro": self.capture = "intro"
         if tag == "meta" and attrs.get("name") == "description": self.description = attrs.get("content", "")
         if tag == "link":
             rel = attrs.get("rel", "").split()
             if "canonical" in rel: self.canonical = attrs.get("href")
             if "alternate" in rel and attrs.get("hreflang"): self.alternates[attrs["hreflang"]] = attrs.get("href")
         if tag == "a" and attrs.get("href"): self.links.append(attrs["href"])
+        if tag == "a" and attrs.get("lang") and attrs.get("aria-label", "").endswith("version"): self.switch_links[attrs["lang"]] = attrs["href"]
     def handle_data(self, data):
-        if self.capture in ("title", "h1"): setattr(self, self.capture, getattr(self, self.capture) + data)
+        if self.capture in ("title", "h1", "intro"): setattr(self, self.capture, getattr(self, self.capture) + data)
     def handle_endtag(self, tag):
-        if tag == self.capture: self.capture = None
+        if tag == self.capture or (self.capture == "intro" and tag == "p"): self.capture = None
 
 def page_path(site_path):
     path = site_path.lstrip("/")
-    return ROOT / path / "index.html" if path.endswith("/") else ROOT / path
+    candidate = ROOT / path
+    if path.endswith("/") or (not Path(path).suffix and (candidate / "index.html").is_file()): return candidate / "index.html"
+    return candidate
 
 def site_path(href, source="/"):
     href = urljoin(BASE + source, href)
@@ -46,18 +50,20 @@ def main():
     assert "/cdn-cgi/l/email-protection" in {item["path"] for item in exclusions["nonContentPaths"]}
     families = {}
     for p in data["pages"]:
-        families[p["id"]] = {"it": p["it"]["path"], "en": f"/en/{p['en']['slug']}/", "de": f"/de/{p['de']['slug']}/"}
+        families[p["id"]] = {locale: (p["it"]["path"] if locale == "it" else f"/{locale}/{p[locale]['slug']}/") for locale in ("it", "en", "de", "ru", "ro")}
     pages = {}
     for key, family in families.items():
         for locale, site in family.items():
             path = page_path(site); assert path.is_file(), f"missing page: {site}"
             parser = PageParser(); parser.feed(path.read_text()); pages[site] = parser
             assert parser.lang == locale, f"wrong lang on {site}: {parser.lang}"
-            assert parser.title.strip() and parser.description.strip() and parser.h1.strip(), f"missing metadata on {site}"
+            assert parser.title.strip() and parser.description.strip() and parser.h1.strip() and parser.intro.strip(), f"missing metadata on {site}"
             assert parser.canonical == BASE + site, f"canonical is not self-referencing: {site}"
-            assert set(parser.alternates) == {"it", "en", "de"}, f"incomplete hreflang set: {site}"
+            assert set(parser.alternates) == {"it", "en", "de", "ru", "ro"}, f"incomplete hreflang set: {site}"
             assert parser.alternates[locale] == BASE + site, f"missing self hreflang: {site}"
             for alt_locale, alt_url in parser.alternates.items(): assert alt_url == BASE + family[alt_locale], f"wrong {alt_locale} alternate on {site}"
+            assert set(parser.switch_links) == {"it", "en", "de", "ru", "ro"}, f"incomplete language switch on {site}"
+            for switch_locale, switch_url in parser.switch_links.items(): assert site_path(switch_url, site).rstrip("/") == family[switch_locale].rstrip("/"), f"wrong {switch_locale} switch link on {site}"
     for site, parser in pages.items():
         for href in parser.links:
             target = site_path(href, site)
@@ -67,9 +73,16 @@ def main():
     locs = {node.text for node in root.findall("sm:url/sm:loc", ns)}
     all_family_urls = {u for family in families.values() for u in family.values()}
     expected = {BASE + "/", *(BASE + u for u in all_family_urls), BASE + "/download.html", BASE + "/faq.html", BASE + "/support.html", BASE + "/privacy.html", BASE + "/terms.html"}
-    assert expected <= locs, f"sitemap missing URLs: {sorted(expected - locs)}"; assert len(locs) == 21, f"unexpected sitemap count: {len(locs)}"
-    print(f"locale architecture valid: {len(families)} families x 3 live locales")
-    print(f"validated pages: {len(pages)}; reciprocal hreflang: it/en/de")
+    assert expected <= locs, f"sitemap missing URLs: {sorted(expected - locs)}"; assert len(locs) == 31, f"unexpected sitemap count: {len(locs)}"
+    for family in families.values():
+        for site in family.values():
+            node = next(node for node in root.findall("sm:url", ns) if node.find("sm:loc", ns).text == BASE + site)
+            sitemap_alts = {link.attrib["hreflang"]: link.attrib["href"] for link in node.findall("{http://www.w3.org/1999/xhtml}link")}
+            assert sitemap_alts == {l: BASE + family[l] for l in family}, f"sitemap alternates incomplete: {site}"
+    assert len({p.title.strip() for p in pages.values()}) == len(pages), "duplicate page titles"
+    assert len({p.h1.strip() for p in pages.values()}) == len(pages), "duplicate page H1s"
+    print(f"locale architecture valid: {len(families)} families x 5 live locales")
+    print(f"validated pages: {len(pages)}; reciprocal hreflang: it/en/de/ru/ro")
     print(f"sitemap valid: {len(locs)} URLs")
 
 if __name__ == "__main__": main()

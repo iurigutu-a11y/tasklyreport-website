@@ -1,11 +1,11 @@
 # Taskly multilingual SEO foundation
 
-This directory is the source of truth for future localized SEO landing pages. It does not create translated pages yet.
+This directory is the source of truth for the localized SEO landing pages. The five landing-page families are live in Italian, English, German, Russian, and Romanian.
 
 ## URL policy
 
 - Italian remains on the existing canonical paths in `locale-map.json`; do not create `/it/...` duplicates.
-- Future pages use a language prefix: `/en/<slug>/`, `/de/<slug>/`, `/ru/<slug>/`, and `/ro/<slug>/`.
+- Localized pages use a language prefix: `/en/<slug>/`, `/de/<slug>/`, `/ru/<slug>/`, and `/ro/<slug>/`.
 - Additional locales follow the same prefix rule only when a real translated page is ready.
 - The homepage may keep its current JavaScript language system. Search-intent landing pages must use separate, indexable locale URLs and must not switch language on one URL at runtime.
 
@@ -33,7 +33,7 @@ Once the German page is live, add its two-way alternate links to both pages. Do 
 
 Keep the current single `sitemap.xml` while the site is small. Add a localized URL only after the page is live, self-canonical, and linked from its real alternates. A sitemap index or locale-specific sitemaps are unnecessary until volume makes the single sitemap unwieldy.
 
-`locale-map.json` provides the planned slugs and keyword intent for the five existing Italian pages. `validate-locale-architecture.py` checks the plan without treating planned URLs as live content.
+`locale-map.json` provides the live slugs and keyword intent for the five page families. `validate-locale-architecture.py` checks all 25 localized pages, their reciprocal alternates, self-canonicals, language switches, internal links, and sitemap membership.
 
 ## Legacy crawl noise
 
