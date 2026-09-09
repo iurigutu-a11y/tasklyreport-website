@@ -1,0 +1,47 @@
+{
+  "defaultLocale": "it",
+  "italianCanonicalPolicy": "keep-existing-paths",
+  "locales": ["en", "de", "ru", "ro"],
+  "pages": [
+    {
+      "id": "job-report",
+      "it": {"path": "/rapportino-di-lavoro-app/", "intent": "app per rapportini di lavoro"},
+      "en": {"slug": "job-report-app", "intent": "job report app"},
+      "de": {"slug": "arbeitsbericht-app", "intent": "Arbeitsbericht-App"},
+      "ru": {"slug": "prilozhenie-dlya-otchetov-o-rabote", "intent": "приложение для отчётов о работе"},
+      "ro": {"slug": "aplicatie-pentru-rapoarte-de-lucru", "intent": "aplicație pentru rapoarte de lucru"}
+    },
+    {
+      "id": "tradespeople",
+      "it": {"path": "/app-per-artigiani/", "intent": "app per artigiani"},
+      "en": {"slug": "app-for-tradespeople", "intent": "app for tradespeople"},
+      "de": {"slug": "handwerker-app", "intent": "Handwerker-App"},
+      "ru": {"slug": "prilozhenie-dlya-masterov", "intent": "приложение для мастеров"},
+      "ro": {"slug": "aplicatie-pentru-meseriasi", "intent": "aplicație pentru meseriași"}
+    },
+    {
+      "id": "electricians",
+      "it": {"path": "/app-per-elettricisti/", "intent": "app per elettricisti"},
+      "en": {"slug": "app-for-electricians", "intent": "app for electricians"},
+      "de": {"slug": "elektriker-app", "intent": "Elektriker-App"},
+      "ru": {"slug": "prilozhenie-dlya-elektrikov", "intent": "приложение для электриков"},
+      "ro": {"slug": "aplicatie-pentru-electricieni", "intent": "aplicație pentru electricieni"}
+    },
+    {
+      "id": "plumbers",
+      "it": {"path": "/app-per-idraulici/", "intent": "app per idraulici"},
+      "en": {"slug": "app-for-plumbers", "intent": "app for plumbers"},
+      "de": {"slug": "installateur-app", "intent": "Installateur-App"},
+      "ru": {"slug": "prilozhenie-dlya-santekhnikov", "intent": "приложение для сантехников"},
+      "ro": {"slug": "aplicatie-pentru-instalatori", "intent": "aplicație pentru instalatori"}
+    },
+    {
+      "id": "work-photo-documentation",
+      "it": {"path": "/documentazione-fotografica-lavori/", "intent": "documentazione fotografica dei lavori"},
+      "en": {"slug": "work-photo-documentation", "intent": "work photo documentation"},
+      "de": {"slug": "fotodokumentation-arbeiten", "intent": "Fotodokumentation von Arbeiten"},
+      "ru": {"slug": "fotodokumentatsiya-rabot", "intent": "фотодокументация работ"},
+      "ro": {"slug": "documentatie-foto-lucrari", "intent": "documentație foto a lucrărilor"}
+    }
+  ]
+}

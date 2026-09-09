@@ -1,0 +1,8 @@
+{
+  "nonContentPaths": [
+    {
+      "path": "/cdn-cgi/l/email-protection",
+      "reason": "Cloudflare email-protection service endpoint; not an indexable content page"
+    }
+  ]
+}
