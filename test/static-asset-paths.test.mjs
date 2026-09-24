@@ -41,6 +41,6 @@ test('HTML asset references are root-relative for shared site assets', async () 
 
 test('support widget loader keeps versioned root-relative assets', async () => {
   const source = await readFile(join(root, 'script.js'), 'utf8');
-  assert.match(source, /\/support-widget\/taskly-support\.css\?v=2/);
-  assert.match(source, /\/support-widget\/taskly-support\.js\?v=2/);
+  assert.match(source, /\/support-widget\/taskly-support\.css\?v=3/);
+  assert.match(source, /\/support-widget\/taskly-support\.js\?v=3/);
 });
