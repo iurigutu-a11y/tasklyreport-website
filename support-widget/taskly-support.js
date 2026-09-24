@@ -281,20 +281,34 @@ export function createSupportWidget(options = {}) {
   return { root, open: () => setOpen(true), close: () => setOpen(false) };
 }
 
+export function getSupportScriptElement(documentRef = globalThis.document) {
+  if (!documentRef) return null;
+  return (
+    documentRef.querySelector('#taskly-support-loader') ||
+    documentRef.querySelector('script[data-taskly-support-loader="true"]')
+  );
+}
+
+export function readSupportConfig(documentRef = globalThis.document) {
+  const scriptElement = getSupportScriptElement(documentRef);
+  return {
+    apiBase: scriptElement?.dataset?.apiBase || '',
+    endpoint: scriptElement?.dataset?.endpoint,
+    locale: scriptElement?.dataset?.locale,
+    product: scriptElement?.dataset?.product,
+  };
+}
+
 function autoInitialize() {
   const documentRef = globalThis.document;
   if (!documentRef) return;
-  const scriptElement = [...documentRef.querySelectorAll('script')].find((script) =>
-    script.src.includes('taskly-support.js'),
-  );
+  const scriptElement = getSupportScriptElement(documentRef);
+  const config = readSupportConfig(documentRef);
   stylesheetFor(documentRef, scriptElement);
   if (!documentRef.querySelector('.taskly-support-widget')) {
     createSupportWidget({
       document: documentRef,
-      apiBase: scriptElement?.dataset?.apiBase || '',
-      endpoint: scriptElement?.dataset?.endpoint,
-      locale: scriptElement?.dataset?.locale,
-      product: scriptElement?.dataset?.product,
+      ...config,
     });
   }
 }

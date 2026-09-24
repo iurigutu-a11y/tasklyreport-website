@@ -394,6 +394,7 @@ function setupSupportWidget() {
   document.head.appendChild(stylesheet);
 
   const script = document.createElement("script");
+  script.id = "taskly-support-loader";
   script.type = "module";
   script.src = "/support-widget/taskly-support.js?v=2";
   script.dataset.css = "/support-widget/taskly-support.css?v=2";
