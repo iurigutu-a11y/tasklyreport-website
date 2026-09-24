@@ -208,6 +208,7 @@ export function createSupportWidget(options = {}) {
   const setOpen = (nextOpen) => {
     open = nextOpen;
     panel.hidden = !open;
+    panel.setAttribute('aria-hidden', String(!open));
     toggle.setAttribute('aria-expanded', String(open));
     if (open) input.focus();
     else toggle.focus();
@@ -221,6 +222,12 @@ export function createSupportWidget(options = {}) {
 
   toggle.addEventListener('click', () => setOpen(!open));
   close.addEventListener('click', () => setOpen(false));
+  close.addEventListener('keydown', (event) => {
+    if ((event.key === 'Enter' || event.key === ' ') && open) {
+      event.preventDefault();
+      setOpen(false);
+    }
+  });
   input.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();

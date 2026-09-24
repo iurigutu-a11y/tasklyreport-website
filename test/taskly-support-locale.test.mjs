@@ -5,10 +5,10 @@ import vm from 'node:vm';
 
 const widgetSource = fs.readFileSync(new URL('../support-widget/taskly-support.js', import.meta.url), 'utf8');
 const loaderSource = fs.readFileSync(new URL('../script.js', import.meta.url), 'utf8');
-const resolverStart = loaderSource.indexOf('function resolveTasklySupportLocale');
+const resolverStart = loaderSource.indexOf('function normalizeTasklySupportLocale');
 const resolverEnd = loaderSource.indexOf('\n\nfunction setupSupportWidget', resolverStart);
 const resolveTasklySupportLocale = vm.runInNewContext(
-  `(${loaderSource.slice(resolverStart, resolverEnd)})`,
+  `(() => { ${loaderSource.slice(resolverStart, resolverEnd)}; return resolveTasklySupportLocale; })()`,
 );
 const { getLocalizedStrings, normalizeLocale, readSupportConfig } = await import(
   `data:text/javascript,${encodeURIComponent(widgetSource)}`,
@@ -103,9 +103,20 @@ test('route locale takes precedence over document language', () => {
   assert.equal(resolveTasklySupportLocale('/ro/', 'en'), 'ro');
 });
 
-test('root and unsupported routes fall back to normalized document language, then English', () => {
-  assert.equal(resolveTasklySupportLocale('/', 'en'), 'en');
+test('root uses the active site locale selected by the translation system', () => {
+  assert.equal(resolveTasklySupportLocale('/', 'en', 'ru'), 'ru');
+  assert.equal(resolveTasklySupportLocale('/', 'en', 'it'), 'it');
+  assert.equal(resolveTasklySupportLocale('/', 'en', 'en'), 'en');
+});
+
+test('unsupported routes use active site locale, then normalized document language, then English', () => {
+  assert.equal(resolveTasklySupportLocale('/xyz', 'en', 'it-IT'), 'it');
   assert.equal(resolveTasklySupportLocale('/xyz', 'it-IT'), 'it');
   assert.equal(resolveTasklySupportLocale('/xyz', 'xx'), 'en');
   assert.equal(resolveTasklySupportLocale('/xyz', ''), 'en');
+});
+
+test('translation initialization records the active language for support', () => {
+  assert.match(loaderSource, /window\.tasklyActiveLanguage = language/);
+  assert.match(loaderSource, /localStorage\.getItem\("taskly_language"\)/);
 });

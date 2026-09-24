@@ -60,6 +60,10 @@
   box-shadow: var(--taskly-support-shadow);
 }
 
+.taskly-support-widget__panel[hidden] {
+  display: none;
+}
+
 .taskly-support-widget__header {
   display: flex;
   align-items: center;

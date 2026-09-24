@@ -277,6 +277,7 @@ window.applyTranslations = function(language) {
     language = "en";
   }
 
+  window.tasklyActiveLanguage = language;
   document.documentElement.lang = language;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
@@ -361,7 +362,15 @@ if (document.readyState === "loading") {
 // ============================================
 // Taskly AI Support widget
 // ============================================
-function resolveTasklySupportLocale(pathname, htmlLang) {
+function normalizeTasklySupportLocale(value, supportedLocales) {
+  const locale = String(value || "")
+    .trim()
+    .toLowerCase()
+    .split(/[-_]/)[0];
+  return supportedLocales.has(locale) ? locale : "";
+}
+
+function resolveTasklySupportLocale(pathname, htmlLang, activeLanguage) {
   const supportedLocales = new Set([
     "en", "it", "ru", "de", "fr", "es", "pl", "ro", "hu", "sl", "zh", "pt", "nl"
   ]);
@@ -372,12 +381,10 @@ function resolveTasklySupportLocale(pathname, htmlLang) {
 
   if (supportedLocales.has(routeLocale)) return routeLocale;
 
-  const documentLocale = String(htmlLang || "")
-    .trim()
-    .toLowerCase()
-    .split(/[-_]/)[0];
+  const activeLocale = normalizeTasklySupportLocale(activeLanguage, supportedLocales);
+  if (activeLocale) return activeLocale;
 
-  return supportedLocales.has(documentLocale) ? documentLocale : "en";
+  return normalizeTasklySupportLocale(htmlLang, supportedLocales) || "en";
 }
 
 function setupSupportWidget() {
@@ -420,6 +427,7 @@ function setupSupportWidget() {
   script.dataset.locale = resolveTasklySupportLocale(
     window.location.pathname,
     document.documentElement.lang,
+    window.tasklyActiveLanguage || localStorage.getItem("taskly_language"),
   );
   script.dataset.apiBase = "https://taskly-ai-server-7ztrsl34mq-ew.a.run.app";
   script.dataset.product = "taskly_report_pro";
