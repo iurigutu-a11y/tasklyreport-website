@@ -397,6 +397,7 @@ function setupSupportWidget() {
   script.type = "module";
   script.src = "/support-widget/taskly-support.js?v=1";
   script.dataset.css = "/support-widget/taskly-support.css?v=1";
+  script.dataset.locale = document.documentElement.lang || navigator.language || "en";
   script.dataset.apiBase = "https://taskly-ai-server-7ztrsl34mq-ew.a.run.app";
   script.dataset.product = "taskly_report_pro";
   script.dataset.tasklySupportLoader = "true";
