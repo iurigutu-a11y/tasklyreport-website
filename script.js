@@ -358,4 +358,45 @@ if (document.readyState === "loading") {
   setupStoreClickTracking();
 }
 
+// ============================================
+// Taskly AI Support widget
+// ============================================
+function setupSupportWidget() {
+  const pathname = window.location.pathname;
+  const excludedPaths = new Set(["/privacy.html", "/terms.html"]);
+  const excludedPrefixes = ["/taskly-codes/", "/cleanfakt/"];
+
+  if (
+    excludedPaths.has(pathname) ||
+    excludedPrefixes.some((prefix) => pathname.startsWith(prefix))
+  ) {
+    return;
+  }
+
+  if (document.querySelector("script[data-taskly-support-loader]")) {
+    return;
+  }
+
+  const stylesheet = document.createElement("link");
+  stylesheet.rel = "stylesheet";
+  stylesheet.href = "/support-widget/taskly-support.css?v=1";
+  stylesheet.dataset.tasklySupportStylesheet = "true";
+  document.head.appendChild(stylesheet);
+
+  const script = document.createElement("script");
+  script.type = "module";
+  script.src = "/support-widget/taskly-support.js?v=1";
+  script.dataset.css = "/support-widget/taskly-support.css?v=1";
+  script.dataset.apiBase = "https://taskly-ai-server-7ztrsl34mq-ew.a.run.app";
+  script.dataset.product = "taskly_report_pro";
+  script.dataset.tasklySupportLoader = "true";
+  document.head.appendChild(script);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupSupportWidget);
+} else {
+  setupSupportWidget();
+}
+
 console.log('Taskly Report PRO - Landing page loaded successfully');

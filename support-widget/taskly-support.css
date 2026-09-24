@@ -1,0 +1,213 @@
+.taskly-support-widget {
+  --taskly-support-accent: #2457d6;
+  --taskly-support-accent-dark: #183e9d;
+  --taskly-support-surface: #ffffff;
+  --taskly-support-text: #172033;
+  --taskly-support-muted: #667085;
+  --taskly-support-border: #e4e7ec;
+  --taskly-support-shadow: 0 18px 48px rgb(16 24 40 / 18%);
+  color: var(--taskly-support-text);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.4;
+}
+
+.taskly-support-widget *,
+.taskly-support-widget *::before,
+.taskly-support-widget *::after {
+  box-sizing: border-box;
+}
+
+.taskly-support-widget__toggle {
+  position: fixed;
+  z-index: 2147483000;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: var(--taskly-support-accent);
+  box-shadow: var(--taskly-support-shadow);
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.taskly-support-widget__toggle:hover {
+  background: var(--taskly-support-accent-dark);
+}
+
+.taskly-support-widget__panel {
+  position: fixed;
+  z-index: 2147482999;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: calc(max(20px, env(safe-area-inset-bottom)) + 72px);
+  display: grid;
+  width: min(360px, calc(100vw - 32px));
+  height: min(520px, calc(100dvh - 104px));
+  grid-template-rows: auto 1fr auto auto;
+  overflow: hidden;
+  border: 1px solid var(--taskly-support-border);
+  border-radius: 18px;
+  background: var(--taskly-support-surface);
+  box-shadow: var(--taskly-support-shadow);
+}
+
+.taskly-support-widget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--taskly-support-accent);
+  color: #fff;
+}
+
+.taskly-support-widget__title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.taskly-support-widget__close,
+.taskly-support-widget__send {
+  border: 0;
+  cursor: pointer;
+}
+
+.taskly-support-widget__close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+}
+
+.taskly-support-widget__messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.taskly-support-message {
+  display: flex;
+}
+
+.taskly-support-message--user {
+  justify-content: flex-end;
+}
+
+.taskly-support-message__bubble {
+  max-width: 85%;
+  margin: 0;
+  padding: 9px 11px;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.taskly-support-message--assistant .taskly-support-message__bubble {
+  background: #f2f4f7;
+}
+
+.taskly-support-message--user .taskly-support-message__bubble {
+  background: #e8efff;
+}
+
+.taskly-support-widget__status {
+  min-height: 20px;
+  margin: 0;
+  padding: 0 16px 4px;
+  color: var(--taskly-support-muted);
+  font-size: 12px;
+}
+
+.taskly-support-widget__form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 10px 12px max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--taskly-support-border);
+}
+
+.taskly-support-widget__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.taskly-support-widget__input {
+  min-width: 0;
+  resize: none;
+  border: 1px solid var(--taskly-support-border);
+  border-radius: 10px;
+  padding: 9px 10px;
+  color: var(--taskly-support-text);
+  font: inherit;
+  font-size: 14px;
+}
+
+.taskly-support-widget__send {
+  align-self: end;
+  min-height: 38px;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--taskly-support-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.taskly-support-widget__send:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.taskly-support-widget button:focus-visible,
+.taskly-support-widget textarea:focus-visible {
+  outline: 3px solid #f5b700;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .taskly-support-widget__toggle {
+    right: max(16px, env(safe-area-inset-right));
+    bottom: max(16px, env(safe-area-inset-bottom));
+  }
+
+  .taskly-support-widget__panel {
+    right: 8px;
+    bottom: 8px;
+    width: calc(100vw - 16px);
+    height: min(620px, calc(100dvh - 16px));
+    border-radius: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .taskly-support-widget__panel:not([hidden]) {
+    animation: taskly-support-panel-in 140ms ease-out;
+  }
+}
+
+@keyframes taskly-support-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
