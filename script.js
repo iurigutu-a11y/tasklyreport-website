@@ -363,8 +363,18 @@ if (document.readyState === "loading") {
 // ============================================
 function setupSupportWidget() {
   const pathname = window.location.pathname;
-  const excludedPaths = new Set(["/privacy.html", "/terms.html"]);
-  const excludedPrefixes = ["/taskly-codes/", "/cleanfakt/"];
+  const excludedPaths = new Set([
+    "/privacy.html",
+    "/privacy",
+    "/terms.html",
+    "/terms",
+  ]);
+  const excludedPrefixes = [
+    "/privacy/",
+    "/terms/",
+    "/taskly-codes/",
+    "/cleanfakt/",
+  ];
 
   if (
     excludedPaths.has(pathname) ||
