@@ -361,6 +361,25 @@ if (document.readyState === "loading") {
 // ============================================
 // Taskly AI Support widget
 // ============================================
+function resolveTasklySupportLocale(pathname, htmlLang) {
+  const supportedLocales = new Set([
+    "en", "it", "ru", "de", "fr", "es", "pl", "ro", "hu", "sl", "zh", "pt", "nl"
+  ]);
+  const routeLocale = String(pathname || "/")
+    .split("/")
+    .filter(Boolean)[0]
+    ?.toLowerCase();
+
+  if (supportedLocales.has(routeLocale)) return routeLocale;
+
+  const documentLocale = String(htmlLang || "")
+    .trim()
+    .toLowerCase()
+    .split(/[-_]/)[0];
+
+  return supportedLocales.has(documentLocale) ? documentLocale : "en";
+}
+
 function setupSupportWidget() {
   const pathname = window.location.pathname;
   const excludedPaths = new Set([
@@ -398,7 +417,10 @@ function setupSupportWidget() {
   script.type = "module";
   script.src = "/support-widget/taskly-support.js?v=3";
   script.dataset.css = "/support-widget/taskly-support.css?v=3";
-  script.dataset.locale = document.documentElement.lang || navigator.language || "en";
+  script.dataset.locale = resolveTasklySupportLocale(
+    window.location.pathname,
+    document.documentElement.lang,
+  );
   script.dataset.apiBase = "https://taskly-ai-server-7ztrsl34mq-ew.a.run.app";
   script.dataset.product = "taskly_report_pro";
   script.dataset.tasklySupportLoader = "true";

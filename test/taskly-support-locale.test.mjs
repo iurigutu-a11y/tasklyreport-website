@@ -1,9 +1,15 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
+import vm from 'node:vm';
 
 const widgetSource = fs.readFileSync(new URL('../support-widget/taskly-support.js', import.meta.url), 'utf8');
 const loaderSource = fs.readFileSync(new URL('../script.js', import.meta.url), 'utf8');
+const resolverStart = loaderSource.indexOf('function resolveTasklySupportLocale');
+const resolverEnd = loaderSource.indexOf('\n\nfunction setupSupportWidget', resolverStart);
+const resolveTasklySupportLocale = vm.runInNewContext(
+  `(${loaderSource.slice(resolverStart, resolverEnd)})`,
+);
 const { getLocalizedStrings, normalizeLocale, readSupportConfig } = await import(
   `data:text/javascript,${encodeURIComponent(widgetSource)}`,
 );
@@ -88,4 +94,18 @@ test('falls back to English through the loader config for unsupported locales', 
 test('website loader uses one stable support script and avoids duplicate initialization', () => {
   assert.match(loaderSource, /script\.id = "taskly-support-loader"/);
   assert.match(loaderSource, /document\.querySelector\("script\[data-taskly-support-loader\]"\)/);
+});
+
+test('route locale takes precedence over document language', () => {
+  assert.equal(resolveTasklySupportLocale('/ru', 'en'), 'ru');
+  assert.equal(resolveTasklySupportLocale('/it', 'en'), 'it');
+  assert.equal(resolveTasklySupportLocale('/de/features', 'en'), 'de');
+  assert.equal(resolveTasklySupportLocale('/ro/', 'en'), 'ro');
+});
+
+test('root and unsupported routes fall back to normalized document language, then English', () => {
+  assert.equal(resolveTasklySupportLocale('/', 'en'), 'en');
+  assert.equal(resolveTasklySupportLocale('/xyz', 'it-IT'), 'it');
+  assert.equal(resolveTasklySupportLocale('/xyz', 'xx'), 'en');
+  assert.equal(resolveTasklySupportLocale('/xyz', ''), 'en');
 });
