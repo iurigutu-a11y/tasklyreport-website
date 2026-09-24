@@ -310,4 +310,52 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTranslations(language);
 }
 );
+
+// ============================================
+// Store click analytics
+// ============================================
+function setupStoreClickTracking() {
+  const storeLinks = document.querySelectorAll(
+    'a[href*="apps.apple.com"], a[href*="play.google.com"]'
+  );
+
+  storeLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const destination = new URL(link.href, window.location.href);
+      const eventName = destination.hostname === "apps.apple.com"
+        ? "app_store_click"
+        : "google_play_click";
+      const eventData = {
+        page_path: window.location.pathname,
+        locale: document.documentElement.lang || "en",
+        link_destination: `${destination.origin}${destination.pathname}`
+      };
+
+      // Reuse an existing GA4 integration when one is supplied by the site.
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, eventData);
+      }
+
+      // Cloudflare Web Analytics does not currently expose custom events.
+      // If Cloudflare Zaraz or GTM is configured, use its existing event queue.
+      if (window.zaraz && typeof window.zaraz.track === "function") {
+        window.zaraz.track(eventName, eventData);
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: eventName, ...eventData });
+
+      // Also expose a lightweight browser event for a future first-party collector.
+      window.dispatchEvent(new CustomEvent("taskly:store-click", {
+        detail: { name: eventName, ...eventData }
+      }));
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", setupStoreClickTracking);
+} else {
+  setupStoreClickTracking();
+}
+
 console.log('Taskly Report PRO - Landing page loaded successfully');
