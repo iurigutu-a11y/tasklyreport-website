@@ -13,6 +13,37 @@ const DEFAULT_STRINGS = Object.freeze({
   malformed: 'I could not read the support response. Please try again.',
 });
 
+const LOCALE_STRINGS = Object.freeze({
+  it: Object.freeze({
+    title: 'Supporto Taskly',
+    welcome: 'Ciao. Chiedimi informazioni sui prodotti e sulle funzioni di Taskly.',
+    placeholder: 'Fai una domanda...',
+    send: 'Invia',
+    close: 'Chiudi il supporto',
+    open: 'Apri il supporto Taskly',
+    thinking: 'Sto pensando…',
+    rateLimited: 'Il supporto sta ricevendo molte richieste. Riprova tra poco.',
+    unavailable: 'Il supporto AI non è temporaneamente disponibile.',
+    unavailableLater: 'Il supporto AI non è temporaneamente disponibile. Riprova più tardi.',
+    connection: 'Problema di connessione. Riprova.',
+    malformed: 'Non ho potuto leggere la risposta del supporto. Riprova.',
+  }),
+  ru: Object.freeze({
+    title: 'Поддержка Taskly',
+    welcome: 'Здравствуйте. Спросите меня о продуктах и функциях Taskly.',
+    placeholder: 'Задайте вопрос...',
+    send: 'Отправить',
+    close: 'Закрыть поддержку',
+    open: 'Открыть поддержку Taskly',
+    thinking: 'Думаю…',
+    rateLimited: 'Сейчас поддержка получает много запросов. Повторите попытку позже.',
+    unavailable: 'ИИ-поддержка временно недоступна.',
+    unavailableLater: 'ИИ-поддержка временно недоступна. Повторите попытку позже.',
+    connection: 'Проблема с подключением. Повторите попытку.',
+    malformed: 'Не удалось прочитать ответ поддержки. Повторите попытку.',
+  }),
+});
+
 const MAX_RENDERED_MESSAGES = 20;
 const MESSAGE_MAX_LENGTH = 4_000;
 
@@ -33,6 +64,11 @@ export function normalizeLocale(value) {
     else if (/^(?:[a-z]{2}|\d{3})$/i.test(part)) normalized.push(part.toUpperCase());
   }
   return normalized.join('-').slice(0, 35);
+}
+
+export function getLocalizedStrings(locale) {
+  const language = normalizeLocale(locale).split('-', 1)[0];
+  return { ...DEFAULT_STRINGS, ...(LOCALE_STRINGS[language] || {}) };
 }
 
 export function createSessionId() {
@@ -109,7 +145,7 @@ function stylesheetFor(documentRef, scriptElement) {
 
 export function createSupportWidget(options = {}) {
   const documentRef = options.document || globalThis.document;
-  const strings = { ...DEFAULT_STRINGS, ...(options.strings || {}) };
+  const strings = { ...getLocalizedStrings(options.locale), ...(options.strings || {}) };
   const root = makeElement(documentRef, 'div', 'taskly-support-widget');
   const toggle = makeElement(documentRef, 'button', 'taskly-support-widget__toggle', '✦');
   toggle.type = 'button';
