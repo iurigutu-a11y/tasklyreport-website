@@ -389,14 +389,14 @@ function setupSupportWidget() {
 
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "/support-widget/taskly-support.css?v=1";
+  stylesheet.href = "/support-widget/taskly-support.css?v=2";
   stylesheet.dataset.tasklySupportStylesheet = "true";
   document.head.appendChild(stylesheet);
 
   const script = document.createElement("script");
   script.type = "module";
-  script.src = "/support-widget/taskly-support.js?v=1";
-  script.dataset.css = "/support-widget/taskly-support.css?v=1";
+  script.src = "/support-widget/taskly-support.js?v=2";
+  script.dataset.css = "/support-widget/taskly-support.css?v=2";
   script.dataset.locale = document.documentElement.lang || navigator.language || "en";
   script.dataset.apiBase = "https://taskly-ai-server-7ztrsl34mq-ew.a.run.app";
   script.dataset.product = "taskly_report_pro";
