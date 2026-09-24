@@ -415,15 +415,15 @@ function setupSupportWidget() {
 
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "/support-widget/taskly-support.css?v=3";
+  stylesheet.href = "/support-widget/taskly-support.css?v=4";
   stylesheet.dataset.tasklySupportStylesheet = "true";
   document.head.appendChild(stylesheet);
 
   const script = document.createElement("script");
   script.id = "taskly-support-loader";
   script.type = "module";
-  script.src = "/support-widget/taskly-support.js?v=3";
-  script.dataset.css = "/support-widget/taskly-support.css?v=3";
+  script.src = "/support-widget/taskly-support.js?v=4";
+  script.dataset.css = "/support-widget/taskly-support.css?v=4";
   script.dataset.locale = resolveTasklySupportLocale(
     window.location.pathname,
     document.documentElement.lang,
